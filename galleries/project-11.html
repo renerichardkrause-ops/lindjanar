@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Gallery 11 — LINDJANAR</title>
+<title>Galerii 11 — LINDJANAR</title>
 <link rel="stylesheet" href="../styles.css" />
 <link rel="icon" type="image/x-icon" href="../favicon.ico" />
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
@@ -14,41 +14,53 @@
 <body>
 
 <!-- ============================================================
-     GALLERY 11
-     - To edit the title/description: see <h1> and <p> below.
-     - To add photos: drop image files into
-         assets/galleries/project-11/
-       then add <img> tags inside <div class="gallery-photos">.
-       Layout is intentionally unformatted — photos stack at
-       their natural aspect ratio, one after another.
+     GALERII 11
+     TÕLGETE MUUTMINE:
+       Pealkiri ET → muuda data-et galerii-title span-il
+       Pealkiri EN → muuda data-en galerii-title span-il
+       Kirjeldus ET → muuda data-et galerii-caption p-l
+       Kirjeldus EN → muuda data-en galerii-caption p-l
+     FOTODE LISAMINE:
+       Lisa pildifailid kausta: assets/galleries/project-11/
+       Seejärel lisa <img> sildid allpool gallery-photos div-i sisse.
+       Fotod kuvatakse loomulikus suuruses, üksteise all.
      ============================================================ -->
 
 <header class="site-header">
   <div class="container nav-row">
     <a href="../index.html" class="logo">LINDJANAR</a>
     <nav class="nav">
-      <a href="../photography.html">Photography</a>
-      <a href="../index.html#videography">Videography</a>
-      <a href="../index.html#about">About</a>
-      <a href="../contact.html">Contact</a>
+      <a href="../photography.html" data-et="Fotograafia" data-en="Photography">Fotograafia</a>
+      <a href="../index.html#videography" data-et="Videograafia" data-en="Videography">Videograafia</a>
+      <a href="../index.html#about" data-et="Meist" data-en="About">Meist</a>
+      <a href="../contact.html" data-et="Kontakt" data-en="Contact">Kontakt</a>
     </nav>
+    <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch to English">EN</button>
   </div>
 </header>
 
 <main class="gallery-page">
   <div class="container">
-    <a href="../photography.html" class="gallery-back">&larr; All galleries</a>
-    <h1 class="gallery-title">Gallery 11</h1>
-    <p class="gallery-caption">Add a short description of this set.</p>
+    <a href="../photography.html" class="gallery-back"
+       data-et="&larr; Kõik galeriid" data-en="&larr; All galleries">&larr; Kõik galeriid</a>
+
+    <h1 class="gallery-title">
+      <span data-et="Galerii" data-en="Gallery">Galerii</span> 11
+    </h1>
+
+    <p class="gallery-caption"
+       data-et="Lisa selle galerii lühikirjeldus." data-en="Add a short description of this gallery.">
+      Lisa selle galerii lühikirjeldus.
+    </p>
 
     <div class="gallery-photos">
-      <!-- Add photos here:
+      <!-- Lisa fotod siia:
       <img src="../assets/galleries/project-11/01.jpg" alt="" />
       <img src="../assets/galleries/project-11/02.jpg" alt="" />
       -->
-      <p class="gallery-empty">
-        No photos yet. Add images to <code>assets/galleries/project-11/</code>
-        and link them above.
+      <p class="gallery-empty"
+         data-et="Fotosid pole veel. Lisa pildid kausta assets/galleries/project-11/ ja lingi need ülal." data-en="No photos yet. Add images to assets/galleries/project-11/ and link them above.">
+        Fotosid pole veel. Lisa pildid kausta <code>assets/galleries/project-11/</code> ja lingi need ülal.
       </p>
     </div>
   </div>
@@ -56,8 +68,8 @@
 
 <footer class="site-footer">
   <div class="container footer-row">
-    <span>&copy; <span class="year"></span> Janar Lind. All rights reserved.</span>
-    <span>Estonia</span>
+    <span>&copy; <span class="year"></span> Janar Lind. <span data-et="Kõik õigused kaitstud." data-en="All rights reserved.">Kõik õigused kaitstud.</span></span>
+    <span data-et="Eesti" data-en="Estonia">Eesti</span>
   </div>
 </footer>
 

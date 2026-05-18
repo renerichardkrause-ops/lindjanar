@@ -72,6 +72,25 @@ img, video { max-width: 100%; display: block; }
 
 .nav a:hover, .nav a.active { color: var(--fg); }
 
+.lang-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--fg-dim);
+  font-family: inherit;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  padding: 4px 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  margin-left: 8px;
+}
+
+.lang-toggle:hover {
+  border-color: var(--fg);
+  color: var(--fg);
+}
+
 /* Hero photo (landing) */
 .hero-image {
   position: relative;

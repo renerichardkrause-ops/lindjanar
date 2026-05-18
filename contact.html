@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contact — LINDJANAR</title>
-<meta name="description" content="Get in touch with Janar Lind — automotive photography and videography, Estonia." />
+<title>Kontakt — LINDJANAR</title>
+<meta name="description" content="Võta ühendust Janar Lindiga — autofotograafia ja videograafia, Eesti." />
 <link rel="stylesheet" href="styles.css" />
 <link rel="icon" type="image/x-icon" href="favicon.ico" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
@@ -15,21 +15,23 @@
 <body>
 
 <!-- ============================================================
-     CONTACT PAGE
-     - Hero image: assets/contact/hero.jpg
-     - Form is wired to mailto: as a fallback. Replace the action
-       and method with a real form handler when ready.
+     KONTAKTLEHT
+     TÕLGETE MUUTMINE:
+       Eestikeelne tekst → muuda data-et="..." atribuuti
+       Ingliskeelne tekst → muuda data-en="..." atribuuti
+       Vormi väljade tekst → muuda data-et-placeholder / data-en-placeholder
      ============================================================ -->
 
 <header class="site-header">
   <div class="container nav-row">
     <a href="index.html" class="logo">LINDJANAR</a>
     <nav class="nav">
-      <a href="photography.html">Photography</a>
-      <a href="index.html#videography">Videography</a>
-      <a href="index.html#about">About</a>
-      <a href="contact.html" class="active">Contact</a>
+      <a href="photography.html" data-et="Fotograafia" data-en="Photography">Fotograafia</a>
+      <a href="index.html#videography" data-et="Videograafia" data-en="Videography">Videograafia</a>
+      <a href="index.html#about" data-et="Meist" data-en="About">Meist</a>
+      <a href="contact.html" class="active" data-et="Kontakt" data-en="Contact">Kontakt</a>
     </nav>
+    <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch to English">EN</button>
   </div>
 </header>
 
@@ -38,7 +40,7 @@
   <!-- [EDIT ASSET] assets/contact/hero.jpg -->
   <section class="contact-hero">
     <div class="placeholder">
-      <span>Contact Hero Photo</span>
+      <span>Kontaktlehe pilt</span>
       <small>assets/contact/hero.jpg</small>
     </div>
     <!-- <img src="assets/contact/hero.jpg" alt="" /> -->
@@ -49,17 +51,16 @@
       <div class="contact-grid">
 
         <div class="contact-info">
-          <h1>Get in touch</h1>
-          <p>
-            Available for commercial shoots, brand films, launches and editorial
-            commissions throughout Estonia, the Baltics, the Nordics and further
-            afield. Send a message with the details and we will be in touch.
+          <h1 data-et="Võta Ühendust" data-en="Get in Touch">Võta Ühendust</h1>
+          <p data-et="Saadaval kommertspildistamisteks, brändifilmideks, turuletulekuteks ja toimetuslikeks tellimusteks üle Eesti, Baltikumi, Põhjamaade ja kaugemal. Saada sõnum koos üksikasjadega ja võtame ühendust."
+             data-en="Available for commercial shoots, brand films, launches and editorial commissions throughout Estonia, the Baltics, the Nordics and further afield. Send a message with the details and we will be in touch.">
+            Saadaval kommertspildistamisteks, brändifilmideks, turuletulekuteks ja toimetuslikeks tellimusteks üle Eesti, Baltikumi, Põhjamaade ja kaugemal. Saada sõnum koos üksikasjadega ja võtame ühendust.
           </p>
 
           <ul class="contact-details">
-            <li>Location — Estonia</li>
-            <li>Phone — +372 000 0000</li>
-            <li>Email — <a href="mailto:hello@lindjanar.com">hello@lindjanar.com</a></li>
+            <li><span data-et="Asukoht" data-en="Location">Asukoht</span> — <span data-et="Eesti" data-en="Estonia">Eesti</span></li>
+            <li><span data-et="Telefon" data-en="Phone">Telefon</span> — +372 000 0000</li>
+            <li><span data-et="E-post" data-en="Email">E-post</span> — <a href="mailto:hello@lindjanar.ee">hello@lindjanar.ee</a></li>
           </ul>
 
           <div class="contact-socials">
@@ -78,13 +79,24 @@
           </div>
         </div>
 
-        <form class="contact-form" action="mailto:hello@lindjanar.com" method="post" enctype="text/plain">
-          <input type="text" name="first_name" placeholder="First name" required />
-          <input type="text" name="last_name" placeholder="Last name" required />
-          <input type="tel" name="phone" placeholder="Number" />
-          <input type="email" name="email" placeholder="Email" required />
-          <textarea class="full" name="message" placeholder="Message" required></textarea>
-          <button type="submit" class="full" style="justify-self: start;">Send</button>
+        <form class="contact-form" action="mailto:hello@lindjanar.ee" method="post" enctype="text/plain">
+          <input type="text" name="first_name"
+            data-et-placeholder="Eesnimi" data-en-placeholder="First name"
+            placeholder="Eesnimi" required />
+          <input type="text" name="last_name"
+            data-et-placeholder="Perekonnanimi" data-en-placeholder="Last name"
+            placeholder="Perekonnanimi" required />
+          <input type="tel" name="phone"
+            data-et-placeholder="Telefoninumber" data-en-placeholder="Phone number"
+            placeholder="Telefoninumber" />
+          <input type="email" name="email"
+            data-et-placeholder="E-post" data-en-placeholder="Email"
+            placeholder="E-post" required />
+          <textarea class="full" name="message"
+            data-et-placeholder="Sõnum" data-en-placeholder="Message"
+            placeholder="Sõnum" required></textarea>
+          <button type="submit" class="full"
+            data-et="Saada" data-en="Send">Saada</button>
         </form>
 
       </div>
@@ -95,8 +107,8 @@
 
 <footer class="site-footer">
   <div class="container footer-row">
-    <span>&copy; <span class="year"></span> Janar Lind. All rights reserved.</span>
-    <span>Estonia</span>
+    <span>&copy; <span class="year"></span> Janar Lind. <span data-et="Kõik õigused kaitstud." data-en="All rights reserved.">Kõik õigused kaitstud.</span></span>
+    <span data-et="Eesti" data-en="Estonia">Eesti</span>
   </div>
 </footer>
 
