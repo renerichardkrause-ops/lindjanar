@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
 :root {
   --bg: #0c0c0d;
   --bg-alt: #131316;
@@ -7,6 +9,8 @@
   --border: #1f1f23;
   --max: 1200px;
   --max-wide: 1400px;
+  --font-display: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+  --font-body: "Inter", "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -16,11 +20,16 @@ html, body {
   padding: 0;
   background: var(--bg);
   color: var(--fg);
-  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
 }
 
 a { color: var(--fg); text-decoration: none; }
@@ -55,9 +64,10 @@ img, video { max-width: 100%; display: block; }
 }
 
 .logo {
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-weight: 600;
   letter-spacing: 0.18em;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
 }
 
 .nav { display: flex; gap: 32px; }
