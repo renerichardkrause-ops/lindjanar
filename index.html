@@ -4,166 +4,245 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>LINDJANAR — Automotive Photography & Videography</title>
-<meta name="description" content="Janar Lind — automotive photographer and videographer based in Estonia. Commercial campaigns, launches, and motion work for car brands and enthusiasts." />
+<meta name="description" content="Janar Lind — automotive photographer and videographer based in Estonia. Commercial campaigns, launches and motion work for car brands and enthusiasts." />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+<!-- ============================================================
+     LINDJANAR — LANDING PAGE
+     To edit copy on this page, look for the comments marked
+     [EDIT COPY] below. Asset paths are noted as [EDIT ASSET].
+     ============================================================ -->
+
 <header class="site-header">
   <div class="container nav-row">
-    <a href="#top" class="logo">LINDJANAR</a>
+    <a href="index.html" class="logo">LINDJANAR</a>
     <nav class="nav">
-      <a href="#photography">Photography</a>
+      <a href="photography.html">Photography</a>
       <a href="#videography">Videography</a>
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
 
-  <section class="hero">
+  <!-- [EDIT ASSET] Hero image. Drop a file at assets/hero/hero.jpg
+       and uncomment the <img> tag below to replace the placeholder. -->
+  <section class="hero-image">
+    <div class="placeholder placeholder-hero">
+      <span>Hero Photo</span>
+      <small>assets/hero/hero.jpg</small>
+    </div>
+    <!-- <img src="assets/hero/hero.jpg" alt="" /> -->
+  </section>
+
+  <!-- [EDIT COPY] Name and lead intro -->
+  <section class="intro">
     <div class="container">
       <h1>Janar Lind</h1>
       <p class="lead">
-        Automotive photographer and videographer based in Estonia. Building images and films
-        that put the car at the centre — from commercial campaigns and launches to enthusiast
-        features and personal projects.
+        Automotive photographer and videographer working out of Estonia.
+        Stills, film and the occasional long drive to find the right light.
       </p>
     </div>
   </section>
 
+  <!-- [EDIT COPY] Featured Work grid — headline removed per spec.
+       Each project links to its gallery page in /galleries/ -->
   <section id="photography" class="portfolio">
     <div class="container">
-      <h2>Featured Work</h2>
       <div class="grid">
-
-        <a href="#" class="project">
-          <div class="placeholder placeholder-image">
-            <span>Project Image 1</span>
-          </div>
+        <a href="galleries/project-01.html" class="project">
+          <div class="placeholder placeholder-image"><span>Project Image 1</span></div>
           <h3>Project Title One</h3>
           <p>Short caption — campaign, client or location.</p>
         </a>
-
-        <a href="#" class="project">
-          <div class="placeholder placeholder-image">
-            <span>Project Image 2</span>
-          </div>
+        <a href="galleries/project-02.html" class="project">
+          <div class="placeholder placeholder-image"><span>Project Image 2</span></div>
           <h3>Project Title Two</h3>
           <p>Short caption — campaign, client or location.</p>
         </a>
-
-        <a href="#" class="project">
-          <div class="placeholder placeholder-image">
-            <span>Project Image 3</span>
-          </div>
+        <a href="galleries/project-03.html" class="project">
+          <div class="placeholder placeholder-image"><span>Project Image 3</span></div>
           <h3>Project Title Three</h3>
           <p>Short caption — campaign, client or location.</p>
         </a>
-
-        <a href="#" class="project">
-          <div class="placeholder placeholder-image">
-            <span>Project Image 4</span>
-          </div>
+        <a href="galleries/project-04.html" class="project">
+          <div class="placeholder placeholder-image"><span>Project Image 4</span></div>
           <h3>Project Title Four</h3>
           <p>Short caption — campaign, client or location.</p>
         </a>
-
-        <a href="#" class="project">
-          <div class="placeholder placeholder-image">
-            <span>Project Image 5</span>
-          </div>
+        <a href="galleries/project-05.html" class="project">
+          <div class="placeholder placeholder-image"><span>Project Image 5</span></div>
           <h3>Project Title Five</h3>
           <p>Short caption — campaign, client or location.</p>
         </a>
-
-        <a href="#" class="project">
-          <div class="placeholder placeholder-image">
-            <span>Project Image 6</span>
-          </div>
+        <a href="galleries/project-06.html" class="project">
+          <div class="placeholder placeholder-image"><span>Project Image 6</span></div>
           <h3>Project Title Six</h3>
           <p>Short caption — campaign, client or location.</p>
         </a>
-
       </div>
     </div>
   </section>
 
-  <section id="about" class="section-split">
+  <!-- [EDIT COPY] Automotive Photography split section -->
+  <section class="section-split">
     <div class="container split">
       <div class="split-text">
         <h2>Automotive Photography</h2>
         <p>
-          Shooting cars is a craft of light, geometry and timing. Every shoot is planned
-          around the car — its lines, its surfaces, the way it reads against a landscape
-          or studio backdrop. The goal is a frame that feels intentional and built for the
-          brand it represents.
+          There is a way every car wants to be photographed — a line that catches the
+          light first, a stance that calls for a low angle, a paint that comes alive at
+          dusk. The work is finding that combination and building the frame around it.
         </p>
         <p>
-          Work has covered commercial campaigns, dealer and launch material, editorial
-          features and enthusiast events across Estonia and the wider Baltic and Nordic
-          region.
+          Commercial campaigns, dealer and launch material, editorial features and
+          enthusiast shoots across Estonia, the Baltics and beyond.
         </p>
       </div>
       <div class="split-media">
+        <!-- [EDIT ASSET] assets/photography/feature.jpg -->
         <div class="placeholder placeholder-image tall">
           <span>Feature Photo</span>
+          <small>assets/photography/feature.jpg</small>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="videography" class="section-split alt">
-    <div class="container split reverse">
-      <div class="split-text">
-        <h2>Videography &amp; Motion</h2>
+  <!-- [EDIT COPY] Videography section with background video -->
+  <section id="videography" class="videography">
+    <!-- [EDIT ASSET] Background video at assets/videography/bg.mp4 -->
+    <video class="videography-bg" autoplay muted loop playsinline poster="">
+      <source src="assets/videography/bg.mp4" type="video/mp4" />
+    </video>
+    <div class="videography-overlay"></div>
+
+    <div class="container videography-content">
+      <h2>Videography &amp; Motion</h2>
+      <p>
+        Cars are made for motion. Where stills hold a moment, film shows weight, sound
+        and pace — the way a car actually lives.
+      </p>
+      <p>
+        Available for full production — directing, shooting, editing and grade — or as
+        a DP on larger crews. Short brand films, launch reels, social cut-downs and
+        longer documentary pieces.
+      </p>
+    </div>
+
+    <!-- [EDIT ASSET] Three 21:9 video slots below.
+         Replace each placeholder with a <video> or YouTube/Vimeo iframe. -->
+    <div class="container video-trio">
+      <div class="placeholder placeholder-video-21-9">
+        <span>Video 1</span>
+        <small>assets/videography/01.mp4</small>
+      </div>
+      <div class="placeholder placeholder-video-21-9">
+        <span>Video 2</span>
+        <small>assets/videography/02.mp4</small>
+      </div>
+      <div class="placeholder placeholder-video-21-9">
+        <span>Video 3</span>
+        <small>assets/videography/03.mp4</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- [EDIT COPY] Retouching with before/after compare slider -->
+  <section id="retouching" class="retouching">
+    <div class="container">
+      <h2>Retouching</h2>
+      <div class="retouching-body">
         <p>
-          Beyond stills, motion brings the car to life — sound, movement and pace working
-          together. From short brand films and social cut-downs to launch reels and longer
-          documentary pieces, the approach stays the same: clean composition, strong colour
-          and a story built around the car.
+          Every frame on this site has been through retouching — it is part of the
+          photography workflow, not a separate service. Raw files are graded for
+          colour and contrast, distractions cleaned up, skies and surfaces balanced,
+          and the car brought forward where it needs to be.
         </p>
         <p>
-          Available for full production — directing, shooting, editing and grade — or as a
-          DP on larger crews.
+          The aim stays the same: keep the photograph honest, but make sure nothing
+          pulls the eye away from the car. Drag the handle below to compare an
+          untouched frame against the finished image.
+        </p>
+      </div>
+
+      <!-- Drag the handle: right reveals the untouched (raw) photo, left reveals the edited photo -->
+      <div class="compare-slider" data-compare>
+        <span class="compare-label left">Edited</span>
+        <span class="compare-label right">Untouched</span>
+
+        <!-- Base (always visible underneath): untouched -->
+        <div class="compare-img compare-img-untouched">
+          <!-- [EDIT ASSET] assets/retouching/before.jpg -->
+          <div class="placeholder placeholder-image">
+            <span>Untouched Photo</span>
+            <small>assets/retouching/before.jpg</small>
+          </div>
+        </div>
+
+        <!-- Top layer (clipped by --pos): edited -->
+        <div class="compare-img compare-img-edited">
+          <!-- [EDIT ASSET] assets/retouching/after.jpg -->
+          <div class="placeholder placeholder-image">
+            <span>Edited Photo</span>
+            <small>assets/retouching/after.jpg</small>
+          </div>
+        </div>
+
+        <div class="compare-handle">
+          <div class="compare-knob">‹›</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- [EDIT COPY] Photography Kit — headline + up to 3 paragraphs + image right -->
+  <section id="kit" class="kit">
+    <div class="container split">
+      <div class="split-text">
+        <h2>Photography Kit</h2>
+        <p>
+          The kit is built for two things — handling a full commercial shoot reliably,
+          and travelling light when the work calls for it. Modern mirrorless bodies,
+          fast primes and zooms, a portable flash kit for location, and the rigging
+          needed to mount, light and stabilise on moving cars.
+        </p>
+        <p>
+          For motion work the same bodies are used with cinema lenses, follow-focus
+          and external monitoring. For aerials, a drone capable of 4K and slow-motion
+          fills in the gaps a tripod cannot reach.
+        </p>
+        <p>
+          Janar will list current bodies, lenses, lighting, rigging and support here
+          in full — so producers can plan around what is on the truck.
         </p>
       </div>
       <div class="split-media">
-        <div class="placeholder placeholder-video">
-          <span>Showreel Video</span>
-          <small>Embed video here</small>
+        <!-- [EDIT ASSET] assets/kit/kit.jpg -->
+        <div class="placeholder placeholder-image tall">
+          <span>Kit Photo</span>
+          <small>assets/kit/kit.jpg</small>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="kit">
-    <div class="container">
-      <h2>Kit</h2>
-      <p class="kit-intro">
-        A working setup chosen to deliver consistent stills and motion in the field and in
-        the studio. Janar will list the current bodies, lenses, lighting and rig kit here.
-      </p>
-      <ul class="kit-list">
-        <li>Camera bodies — list here</li>
-        <li>Lenses — list here</li>
-        <li>Lighting — list here</li>
-        <li>Rigs &amp; support — list here</li>
-        <li>Drone / aerial — list here</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="personal">
+  <!-- [EDIT COPY] A Passion For Cars (renamed from Personal Work) -->
+  <section id="about" class="personal">
     <div class="container split">
       <div class="split-text">
-        <h2>Personal Work</h2>
+        <h2>A Passion For Cars</h2>
         <p>
-          Outside of commissioned work, there is an ongoing personal archive — road trips,
-          car meets, late-night drives and project cars. It is where new ideas are tested
-          and where the love of cars stays loud.
+          Photography started with the cars first. Long before any client work there
+          were car meets, late drives and a camera that came along for the ride. That
+          part has not changed — there is still an ongoing personal archive of
+          project cars, road trips and the kind of scenes that never make it onto a
+          brief.
         </p>
         <p>
           Follow along on
@@ -172,21 +251,26 @@
         </p>
       </div>
       <div class="split-media">
+        <!-- [EDIT ASSET] assets/about/about.jpg — picture of Janar shooting a car
+             (later this can be swapped to a <video> tag with the same path) -->
         <div class="placeholder placeholder-image">
-          <span>Personal Project Image</span>
+          <span>Janar Shooting a Car</span>
+          <small>assets/about/about.jpg</small>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- [EDIT COPY] Contact (full page is contact.html — this is the landing CTA) -->
   <section id="contact" class="contact">
     <div class="container">
       <h2>Get in touch</h2>
-      <p>For bookings, commissions and collaborations:</p>
+      <p>For bookings, commissions and collaborations.</p>
       <ul class="contact-list">
         <li>Email — <a href="mailto:hello@lindjanar.com">hello@lindjanar.com</a></li>
         <li>Phone — +372 000 0000</li>
         <li>Instagram — <a href="https://www.instagram.com/lindjanar/" target="_blank" rel="noopener">@lindjanar</a></li>
+        <li><a href="contact.html">Full contact form →</a></li>
       </ul>
     </div>
   </section>
@@ -195,14 +279,11 @@
 
 <footer class="site-footer">
   <div class="container footer-row">
-    <span>&copy; <span id="year"></span> Janar Lind. All rights reserved.</span>
+    <span>&copy; <span class="year"></span> Janar Lind. All rights reserved.</span>
     <span>Estonia</span>
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
