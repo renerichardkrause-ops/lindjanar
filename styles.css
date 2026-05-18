@@ -102,31 +102,40 @@ img, video { max-width: 100%; display: block; }
   inset: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   z-index: 3;
-  padding-bottom: 80px;
-  background: linear-gradient(to top, rgba(12,12,13,0.78) 0%, rgba(12,12,13,0.25) 45%, transparent 70%);
   pointer-events: none;
 }
 
-.hero-overlay .container { width: 100%; }
+.hero-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(12,12,13,0.35) 0%, transparent 40%, transparent 60%, rgba(12,12,13,0.45) 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero-overlay .container { width: 100%; position: relative; }
 
 .hero-overlay h1 {
-  font-size: clamp(2.5rem, 9vw, 7rem);
+  font-size: clamp(2.8rem, 10vw, 8rem);
   font-weight: 700;
   letter-spacing: 0.04em;
-  margin: 0 0 20px;
+  margin: 0 0 24px;
   line-height: 1;
   color: #fff;
   text-transform: uppercase;
+  text-shadow: 0 4px 28px rgba(0,0,0,0.65), 0 1px 4px rgba(0,0,0,0.55);
 }
 
 .hero-overlay .lead {
   font-size: clamp(1rem, 1.4vw, 1.2rem);
-  color: #e6e6e6;
+  color: #f2f2f2;
   max-width: 680px;
   margin: 0;
   line-height: 1.55;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.75);
 }
 
 .lead {
