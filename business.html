@@ -49,11 +49,23 @@
   <section class="biz-hero">
     <div class="biz-hero-bg">
 
-      <!-- [EDIT ASSET] Add hero video: assets/business/hero.mp4
-      <video class="biz-hero-video" autoplay muted loop playsinline poster="assets/business/hero-poster.jpg">
+      <!-- ═══════════════════════════════════════════════════════════
+           HERO VIDEO — kuidas lisada / HOW TO ADD:
+           1. Nimeta fail: assets/business/hero.mp4
+           2. Kustuta rida "<div class="biz-hero-placeholder">" allpool
+           3. Eemalda kommentaarid <video> elemendilt
+           ═══════════════════════════════════════════════════════════ -->
+
+      <!--
+      <video class="biz-hero-video" autoplay muted loop playsinline>
         <source src="assets/business/hero.mp4" type="video/mp4" />
       </video>
       -->
+
+      <div class="biz-hero-placeholder">
+        <span>Hero Video</span>
+        <small>assets/business/hero.mp4</small>
+      </div>
 
     </div>
     <div class="biz-hero-overlay"></div>
@@ -129,7 +141,10 @@
       <div class="biz-who-grid">
 
         <div class="biz-who-card">
-          <!-- [EDIT ASSET] assets/business/dealership.jpg -->
+          <div class="biz-who-card-img">
+            <!-- [EDIT ASSET] assets/business/dealership.jpg -->
+            <div class="placeholder placeholder-image r-3-2"><span>Dealership Photo</span><small>assets/business/dealership.jpg</small></div>
+          </div>
           <div class="biz-who-body">
             <h3 data-et="Autoesindused" data-en="Dealerships">Autoesindused</h3>
             <p
@@ -147,7 +162,10 @@
         </div>
 
         <div class="biz-who-card">
-          <!-- [EDIT ASSET] assets/business/brand.jpg -->
+          <div class="biz-who-card-img">
+            <!-- [EDIT ASSET] assets/business/brand.jpg -->
+            <div class="placeholder placeholder-image r-3-2"><span>Brand Campaign Photo</span><small>assets/business/brand.jpg</small></div>
+          </div>
           <div class="biz-who-body">
             <h3 data-et="Autobrändid" data-en="Automotive Brands">Autobrändid</h3>
             <p
@@ -219,6 +237,31 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NÄIDISTÖÖD — 3 FOTOT KÕRVUTI
+       [EDIT ASSET] Asenda placeholder divid päris fotodega:
+         assets/business/sample-1.jpg
+         assets/business/sample-2.jpg
+         assets/business/sample-3.jpg
+       ============================================================ -->
+  <section class="biz-samples">
+    <div class="biz-samples-strip">
+
+      <div class="biz-sample">
+        <div class="placeholder placeholder-image"><span>Sample 1</span><small>assets/business/sample-1.jpg</small></div>
+      </div>
+
+      <div class="biz-sample">
+        <div class="placeholder placeholder-image"><span>Sample 2</span><small>assets/business/sample-2.jpg</small></div>
+      </div>
+
+      <div class="biz-sample">
+        <div class="placeholder placeholder-image"><span>Sample 3</span><small>assets/business/sample-3.jpg</small></div>
+      </div>
+
     </div>
   </section>
 
@@ -385,6 +428,12 @@
   <section class="biz-process">
     <div class="container">
       <h2 class="biz-section-label" data-et="Kuidas see käib" data-en="How it works">Kuidas see käib</h2>
+
+      <!-- [EDIT ASSET] assets/business/bts.jpg — võtteprotsess / kaader maha -->
+      <div class="biz-process-img">
+        <div class="placeholder placeholder-image"><span>Behind the Scenes / Shoot Photo</span><small>assets/business/bts.jpg</small></div>
+      </div>
+
       <div class="biz-process-steps">
 
         <div class="biz-step">

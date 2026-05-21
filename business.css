@@ -7,6 +7,17 @@
   --biz-gold: #c9924f;
 }
 
+/* ---- Light theme override (scoped to <main> so header/footer stay dark) ---- */
+main {
+  --bg:     #f8f7f5;
+  --bg-alt: #eceae6;
+  --fg:     #1a1a1e;
+  --fg-dim: #6b6b77;
+  --border: rgba(0, 0, 0, 0.1);
+  background: #f8f7f5;
+  color: #1a1a1e;
+}
+
 /* ---- Section label (small uppercase heading) ---- */
 .biz-section-label {
   font-size: 0.75rem !important;
@@ -34,6 +45,7 @@
   position: absolute;
   inset: 0;
   z-index: -2;
+  background: #0a0a0c; /* dark fallback so hero reads correctly without video */
 }
 
 .biz-hero-video {
@@ -48,9 +60,18 @@
 .biz-hero-placeholder {
   width: 100%;
   height: 100%;
+  background: #0a0a0c;
   border: none;
   border-radius: 0;
   aspect-ratio: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.22);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
 }
 
 .biz-hero-overlay {
@@ -259,6 +280,23 @@
   color: var(--biz-gold);
 }
 
+/* ---- Who-card image slot ---- */
+.biz-who-card-img {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.biz-who-card-img img,
+.biz-who-card-img .placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: auto;
+  border-radius: 0;
+  min-height: 0;
+}
+
 /* ============================================================
    WHAT'S INCLUDED
    ============================================================ */
@@ -306,6 +344,33 @@
   font-size: 0.85rem;
   color: var(--fg-dim);
   line-height: 1.5;
+}
+
+/* ============================================================
+   SAMPLE STRIP  (3 photos, edge-to-edge, between sections)
+   ============================================================ */
+.biz-samples {
+  overflow: hidden;
+}
+
+.biz-samples-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.biz-sample {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.biz-sample img,
+.biz-sample .placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: auto;
+  border-radius: 0;
+  min-height: 0;
 }
 
 /* ============================================================
@@ -359,7 +424,7 @@
   transition: border-color 0.2s ease;
 }
 
-.biz-card:hover { border-color: #3a3a42; }
+.biz-card:hover { border-color: rgba(0, 0, 0, 0.28); }
 
 .biz-card--featured {
   border-color: var(--biz-gold);
@@ -477,6 +542,23 @@
   padding: 100px 0;
   border-bottom: 1px solid var(--border);
   background: var(--bg-alt);
+}
+
+.biz-process-img {
+  margin-bottom: 64px;
+  aspect-ratio: 16 / 6;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.biz-process-img img,
+.biz-process-img .placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: auto;
+  border-radius: 0;
+  min-height: 0;
 }
 
 .biz-process-steps {
@@ -772,7 +854,7 @@
   cursor: pointer;
 }
 
-.biz-form select option { background: #1a1a1e; }
+.biz-form select option { background: #f8f7f5; color: #1a1a1e; }
 
 .biz-form input:focus,
 .biz-form select:focus,
@@ -821,6 +903,14 @@
   .biz-includes-grid {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+
+  .biz-samples-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .biz-process-img {
+    aspect-ratio: 16 / 7;
   }
 
   .biz-cards {

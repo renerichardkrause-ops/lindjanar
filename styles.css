@@ -246,7 +246,7 @@ section h2 {
 .placeholder-image.r-3-2 { aspect-ratio: 3 / 2; }
 .placeholder-image.r-3-4 { aspect-ratio: 3 / 4; }
 .placeholder-video { aspect-ratio: 16 / 9; }
-.placeholder-video-21-9 { aspect-ratio: 21 / 9; border-radius: 12px; overflow: hidden; display: block; }
+.placeholder-video-21-9 { aspect-ratio: 21 / 9; border-radius: 20px; overflow: hidden; display: block; }
 
 /* Split sections */
 .section-split {
