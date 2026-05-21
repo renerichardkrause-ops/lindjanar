@@ -246,7 +246,7 @@ section h2 {
 .placeholder-image.r-3-2 { aspect-ratio: 3 / 2; }
 .placeholder-image.r-3-4 { aspect-ratio: 3 / 4; }
 .placeholder-video { aspect-ratio: 16 / 9; }
-.placeholder-video-21-9 { aspect-ratio: 21 / 9; }
+.placeholder-video-21-9 { aspect-ratio: 21 / 9; border-radius: 12px; overflow: hidden; display: block; }
 
 /* Split sections */
 .section-split {
@@ -394,9 +394,6 @@ section h2 {
 .compare-label.left { left: 16px; }
 .compare-label.right { right: 16px; }
 
-/* Photography Kit */
-.kit { padding: 100px 0; border-bottom: 1px solid var(--border); }
-.kit .split-text p { margin-bottom: 16px; }
 
 /* Personal */
 .personal { padding: 100px 0; border-bottom: 1px solid var(--border); }
@@ -724,7 +721,7 @@ section h2 {
   .split.reverse .split-text { order: 1; }
   .split.reverse .split-media { order: 2; }
   .intro { padding: 60px 0 40px; }
-  .portfolio, .section-split, .kit, .personal, .retouching { padding: 64px 0; }
+  .portfolio, .section-split, .personal, .retouching { padding: 64px 0; }
   .videography { padding: 80px 0 64px; }
   .contact { padding: 80px 0; }
   .hero-image { height: 60vh; }
