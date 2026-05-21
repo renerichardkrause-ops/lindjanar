@@ -67,3 +67,41 @@ function initCompareSlider(el) {
 }
 
 document.querySelectorAll('[data-compare]').forEach(initCompareSlider);
+
+// ============================================================
+// Lightbox — single-image gallery thumbnails (.gallery-thumb--lightbox)
+// ============================================================
+(function () {
+  var lightbox = document.getElementById('lightbox');
+  if (!lightbox) return;
+
+  var img = lightbox.querySelector('.lightbox-img');
+  var bg  = lightbox.querySelector('.lightbox-bg');
+  var btn = lightbox.querySelector('.lightbox-close');
+
+  function open(src) {
+    img.src = src;
+    lightbox.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lightbox.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(function () { img.src = ''; }, 250);
+  }
+
+  document.querySelectorAll('.gallery-thumb--lightbox').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      open(el.dataset.img);
+    });
+  });
+
+  if (btn) btn.addEventListener('click', close);
+  if (bg)  bg.addEventListener('click', close);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('is-open')) close();
+  });
+})();

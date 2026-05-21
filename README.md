@@ -10,9 +10,11 @@ Live: https://renerichardkrause-ops.github.io/lindjanar/
 lindjanar/
 ├── index.html              Landing page
 ├── photography.html        Photography sub-page (gallery grid)
+├── business.html           B2B page (dealerships & automotive brands)
 ├── contact.html            Contact page
-├── styles.css              All styles
-├── script.js               Footer year + retouching compare slider
+├── styles.css              Shared styles (dark theme)
+├── business.css            B2B page styles (extends styles.css)
+├── script.js               Footer year + ET/EN language toggle
 ├── galleries/              36 individual gallery pages
 │   ├── project-01.html
 │   ├── project-02.html
@@ -25,6 +27,7 @@ lindjanar/
     ├── kit/                Kit photo
     ├── about/              "A Passion For Cars" photo (later video)
     ├── contact/            Contact page hero photo
+    ├── business/           B2B page hero video + dealership/brand photos
     └── galleries/
         ├── project-01/     Photos for gallery 01
         ├── project-02/
@@ -58,34 +61,54 @@ comment, and edit the text below it.
    `[EDIT ASSET] Hero image` and uncomment the `<img>` tag below the
    placeholder.
 
-2. **Photography feature photo (split section)** — `assets/photography/feature.jpg`.
+2. **Photography page hero video** — `assets/photography/hero.mp4`.
+   - Aspect ratio: **16:9 landscape**
+   - Resolution: **1920×1080** (1080p) — sharp on all screens
+   - Format: MP4 / H.264, no audio needed (it autoplays muted)
+   - Duration: 10–30 s looping; keep file size **under 8 MB**
+   - In `photography.html` find the `[EDIT ASSET] Hero video` comment,
+     remove the placeholder `<div>`, and uncomment the `<video>` tag below it.
 
-3. **Videography background video** — `assets/videography/bg.mp4`.
+3. **Photography feature photo (split section on landing)** — `assets/photography/feature.jpg`.
+
+4. **Videography background video** — `assets/videography/bg.mp4`.
    It is already wired up; just drop the file. Keep it short (5–15s)
    and ideally under ~5 MB for fast loading.
 
-4. **Three videography videos** — `assets/videography/01.mp4`, `02.mp4`,
+5. **Three videography videos** — `assets/videography/01.mp4`, `02.mp4`,
    `03.mp4`. In `index.html` replace each `placeholder-video-21-9`
    div with a `<video>` tag or a YouTube/Vimeo iframe.
 
-5. **Retouching before/after** — `assets/retouching/before.jpg`
+6. **Retouching before/after** — `assets/retouching/before.jpg`
    (untouched) and `assets/retouching/after.jpg` (edited). Replace the
    two placeholders inside the `compare-slider` block in `index.html`.
 
-6. **Kit photo** — `assets/kit/kit.jpg`.
+7. **Kit photo** — `assets/kit/kit.jpg`.
 
-7. **About photo** — `assets/about/about.jpg` (Janar shooting a car).
+8. **About photo** — `assets/about/about.jpg` (Janar shooting a car).
    Later this can be swapped for a video by replacing the placeholder
    with a `<video>` tag.
 
-8. **Contact hero** — `assets/contact/hero.jpg`.
+9. **Contact hero** — `assets/contact/hero.jpg`.
 
-9. **Gallery covers (photography page)** — for each gallery, drop a
-   cover image at `assets/galleries/project-NN/cover.jpg`. In
-   `photography.html` find the matching `<a class="gallery-thumb">`
-   and replace its placeholder div with `<img src="…/cover.jpg" alt="" />`.
+10. **Business page hero video** — `assets/business/hero.mp4`.
+    - Aspect ratio: **16:9 or wider** (the hero fills `min-height: 88vh`)
+    - Resolution: **1920×1080** minimum; 2560×1440 if available
+    - Format: MP4 / H.264, no audio (autoplays muted)
+    - Duration: 10–30 s looping; aim for **under 10 MB**
+    - Optional: add a poster frame as `assets/business/hero-poster.jpg`
+      (shown before the video loads) — 1920×1080 JPEG
+    - In `business.html` find the `[EDIT ASSET] hero video` comment,
+      uncomment the `<video>` block, and remove the placeholder `<div>`.
+    - Also add `assets/business/dealership.jpg` and `assets/business/brand.jpg`
+      for the two "Who it's for" section images (3:2 landscape, ~1600×1067).
 
-10. **Photos inside a gallery** — drop any number of images into
+11. **Gallery covers (photography page)** — for each gallery, drop a
+    cover image at `assets/galleries/project-NN/cover.jpg`. In
+    `photography.html` find the matching `<a class="gallery-thumb">`
+    and replace its placeholder div with `<img src="…/cover.jpg" alt="" />`.
+
+12. **Photos inside a gallery** — drop any number of images into
     `assets/galleries/project-NN/`, then open `galleries/project-NN.html`
     and add `<img src="../assets/galleries/project-NN/your-file.jpg" alt="" />`
     tags inside `<div class="gallery-photos">`. Photos stack at their

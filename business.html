@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ettevõtetele — LINDJANAR</title>
+<meta name="description" content="Professionaalne autofotograafia autoesindusele ja -brändidele. Pildid, mis müüvad — garanteeritud." />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="business.css" />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+</head>
+<body>
+
+<!-- ============================================================
+     ÄRIKLIENTIDE LEHT
+     TÕLGETE MUUTMINE:
+       Eestikeelne tekst → muuda data-et="..." atribuuti
+       Ingliskeelne tekst → muuda data-en="..." atribuuti
+       Vormi väljade tekst → muuda data-et-placeholder / data-en-placeholder
+     ============================================================ -->
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="index.html" class="logo">LINDJANAR</a>
+    <nav class="nav">
+      <a href="photography.html" data-et="Fotograafia" data-en="Photography">Fotograafia</a>
+      <a href="index.html#videography" data-et="Videograafia" data-en="Videography">Videograafia</a>
+      <a href="business.html" class="active" data-et="Ettevõtetele" data-en="Business">Ettevõtetele</a>
+      <a href="index.html#about" data-et="Meist" data-en="About">Meist</a>
+      <a href="contact.html" data-et="Kontakt" data-en="Contact">Kontakt</a>
+    </nav>
+    <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Switch to English">EN</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================================================
+       HERO
+       [EDIT ASSET] Vahetada placeholder välja päris videoga:
+         1. Lisa fail: assets/business/hero.mp4
+         2. Eemalda kommentaarid video elemendilt allpool
+         3. Kustuta placeholder div
+       ============================================================ -->
+  <section class="biz-hero">
+    <div class="biz-hero-bg">
+
+      <!-- Video (uncomment when file is ready) -->
+      <!--
+      <video class="biz-hero-video" autoplay muted loop playsinline poster="assets/business/hero-poster.jpg">
+        <source src="assets/business/hero.mp4" type="video/mp4" />
+      </video>
+      -->
+
+      <!-- Placeholder — remove once video is added -->
+      <div class="placeholder biz-hero-placeholder">
+        <span>Hero Video</span>
+        <small>assets/business/hero.mp4</small>
+      </div>
+
+    </div>
+    <div class="biz-hero-overlay"></div>
+    <div class="container biz-hero-content">
+      <p class="biz-eyebrow"
+         data-et="Autoesindused &amp; Autobrändid"
+         data-en="Dealerships &amp; Automotive Brands">
+        Autoesindused &amp; Autobrändid
+      </p>
+      <h1
+        data-et="Autofotograafia, mis müüb."
+        data-en="Automotive photography that converts.">
+        Autofotograafia,<br>mis müüb.
+      </h1>
+      <p class="biz-hero-sub"
+         data-et="Professionaalsed fotolahendused autoesinduse inventarile ja brändi kampaaniatele — kiire tarnimine, äriline litsents, null riski."
+         data-en="Professional photography for dealership inventory and brand campaigns — fast delivery, commercial licence, zero risk.">
+        Professionaalsed fotolahendused autoesinduse inventarile ja brändi kampaaniatele — kiire tarnimine, äriline litsents, null riski.
+      </p>
+      <div class="biz-hero-cta">
+        <a href="#pricing" class="btn-primary"
+           data-et="Vaata hinnakirja" data-en="See pricing">
+          Vaata hinnakirja
+        </a>
+        <a href="#contact-biz" class="btn-ghost"
+           data-et="Päringu saatmine" data-en="Send enquiry">
+          Päringu saatmine
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROBLEEMI SEKTSIOON
+       ============================================================ -->
+  <section class="biz-pain">
+    <div class="container biz-pain-grid">
+      <div class="biz-pain-stat">
+        <span class="biz-stat-num">87%</span>
+        <span class="biz-stat-label"
+              data-et="autoostjatest alustab otsingut internetist"
+              data-en="of car buyers start their search online">
+          autoostjatest alustab otsingut internetist
+        </span>
+      </div>
+      <div class="biz-pain-text">
+        <h2
+          data-et="Kehv pilt on kaotatud müük."
+          data-en="Bad photography costs you sales.">
+          Kehv pilt on kaotatud müük.
+        </h2>
+        <p
+          data-et="Esimene mulje kujuneb fotolt — mitte testisõidul ega müügisaalis. Ostjad filtreerivad, otsustavad ja lähevad edasi sekunditega. Auto, mis on halvasti pildistatud, kaotab tähelepanu juba enne, kui keegi on hinnasilti näinud."
+          data-en="The first impression is made by the photograph — not on the test drive, not in the showroom. Buyers filter, decide and move on in seconds. A car photographed poorly loses attention before anyone has seen the price tag.">
+          Esimene mulje kujuneb fotolt — mitte testisõidul ega müügisaalis. Ostjad filtreerivad, otsustavad ja lähevad edasi sekunditega. Auto, mis on halvasti pildistatud, kaotab tähelepanu juba enne, kui keegi on hinnasilti näinud.
+        </p>
+        <p
+          data-et="Professionaalne autofotograafia ei ole kuluartikkel. See on investeering, millel on mõõdetav mõju — rohkem klikke, rohkem huvi, kiirem müük."
+          data-en="Professional automotive photography is not a cost. It is an investment with a measurable return — more clicks, more interest, faster sales.">
+          Professionaalne autofotograafia ei ole kuluartikkel. See on investeering, millel on mõõdetav mõju — rohkem klikke, rohkem huvi, kiirem müük.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KELLELE
+       ============================================================ -->
+  <section class="biz-who">
+    <div class="container">
+      <h2 class="biz-section-label"
+          data-et="Kellele" data-en="Who It's For">Kellele</h2>
+      <div class="biz-who-grid">
+
+        <div class="biz-who-card">
+          <!-- [EDIT ASSET] assets/business/dealership.jpg -->
+          <div class="placeholder placeholder-image r-3-2">
+            <span>Dealership Photo</span>
+            <small>assets/business/dealership.jpg</small>
+          </div>
+          <div class="biz-who-body">
+            <h3 data-et="Autoesindused" data-en="Dealerships">Autoesindused</h3>
+            <p
+              data-et="Ühtlane, professionaalne visuaalne keel üle kogu inventari. Iga auto näeb välja nii hea kui ta on — sõltumata sellest, kas tegemist on ainsa sedaaniga või sajapealise flotilliga."
+              data-en="Consistent, professional imagery across your entire inventory. Every car looks as good as it is — whether it is a single saloon or a fleet of a hundred.">
+              Ühtlane, professionaalne visuaalne keel üle kogu inventari. Iga auto näeb välja nii hea kui ta on — sõltumata sellest, kas tegemist on ainsa sedaaniga või sajapealise flotilliga.
+            </p>
+            <ul class="biz-who-list">
+              <li data-et="Inventarivõtted ja tooteesitlus" data-en="Inventory &amp; stock photography">Inventarivõtted ja tooteesitlus</li>
+              <li data-et="Saitide ja portaalide materjalid" data-en="Website &amp; listings content">Saitide ja portaalide materjalid</li>
+              <li data-et="Sotsiaalmeedia ja reklaam" data-en="Social media &amp; advertising">Sotsiaalmeedia ja reklaam</li>
+              <li data-et="Püsikliendi lahendused" data-en="Ongoing retainer options">Püsikliendi lahendused</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="biz-who-card">
+          <!-- [EDIT ASSET] assets/business/brand.jpg -->
+          <div class="placeholder placeholder-image r-3-2">
+            <span>Brand Campaign Photo</span>
+            <small>assets/business/brand.jpg</small>
+          </div>
+          <div class="biz-who-body">
+            <h3 data-et="Autobrändid" data-en="Automotive Brands">Autobrändid</h3>
+            <p
+              data-et="Turuletulekud, brändifilmid ja kampaaniamaterjalid, mis peavad vastu konkurentsile. Detailile orienteeritud töö, mis järgib brändi visuaalset keelt ja sobib kõigisse kanalitesse."
+              data-en="Launch campaigns, brand films and campaign assets that stand up to competition. Detail-oriented work that follows your visual identity and works across every channel.">
+              Turuletulekud, brändifilmid ja kampaaniamaterjalid, mis peavad vastu konkurentsile. Detailile orienteeritud töö, mis järgib brändi visuaalset keelt ja sobib kõigisse kanalitesse.
+            </p>
+            <ul class="biz-who-list">
+              <li data-et="Turuletuleku- ja kampaaniavõtted" data-en="Launch &amp; campaign shoots">Turuletuleku- ja kampaaniavõtted</li>
+              <li data-et="Toimetuslikud ja pressimaterjalid" data-en="Editorial &amp; press assets">Toimetuslikud ja pressimaterjalid</li>
+              <li data-et="Digitaalne ja trükimaterajl" data-en="Digital &amp; print material">Digitaalne ja trükkmaterjal</li>
+              <li data-et="Kaasav videograafia" data-en="Videography add-on available">Kaasav videograafia</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MIDA SAAB
+       ============================================================ -->
+  <section class="biz-includes">
+    <div class="container">
+      <h2 class="biz-section-label"
+          data-et="Iga võttega kaasas" data-en="Included with every shoot">Iga võttega kaasas</h2>
+      <div class="biz-includes-grid">
+        <div class="biz-include-item">
+          <span class="biz-check">&#10003;</span>
+          <div>
+            <strong data-et="Professionaalne valgustus kohapeal" data-en="Professional lighting on location">Professionaalne valgustus kohapeal</strong>
+            <p data-et="Stuudiokvaliteet, kus iganes auto asub." data-en="Studio quality wherever the car is.">Stuudiokvaliteet, kus iganes auto asub.</p>
+          </div>
+        </div>
+        <div class="biz-include-item">
+          <span class="biz-check">&#10003;</span>
+          <div>
+            <strong data-et="Täielik professionaalne retušš" data-en="Full professional retouching">Täielik professionaalne retušš</strong>
+            <p data-et="Iga lõplik pilt on töödeldud — värv, kontrastsus, puhtus." data-en="Every delivered image is graded — colour, contrast, clean.">Iga lõplik pilt on töödeldud — värv, kontrastsus, puhtus.</p>
+          </div>
+        </div>
+        <div class="biz-include-item">
+          <span class="biz-check">&#10003;</span>
+          <div>
+            <strong data-et="Tarnimine nädala jooksul" data-en="Delivery within one week">Tarnimine nädala jooksul</strong>
+            <p data-et="Standardne samanädalane tarnimine kõigile pakettidele." data-en="Standard same-week delivery on all packages.">Standardne samanädalane tarnimine kõigile pakettidele.</p>
+          </div>
+        </div>
+        <div class="biz-include-item">
+          <span class="biz-check">&#10003;</span>
+          <div>
+            <strong data-et="Äriline kasutuslitsents" data-en="Commercial usage licence">Äriline kasutuslitsents</strong>
+            <p data-et="Kasuta kõigis kanalites — veeb, sotsiaal, print, reklaam." data-en="Use across all channels — web, social, print, advertising.">Kasuta kõigis kanalites — veeb, sotsiaal, print, reklaam.</p>
+          </div>
+        </div>
+        <div class="biz-include-item">
+          <span class="biz-check">&#10003;</span>
+          <div>
+            <strong data-et="Kõrgresolutsiooni JPEG-failid" data-en="High-resolution JPEG files">Kõrgresolutsiooni JPEG-failid</strong>
+            <p data-et="Optimeeritud nii veebikasutuseks kui ka trükkimiseks." data-en="Optimised for both digital use and print.">Optimeeritud nii veebikasutuseks kui ka trükkimiseks.</p>
+          </div>
+        </div>
+        <div class="biz-include-item">
+          <span class="biz-check">&#10003;</span>
+          <div>
+            <strong data-et="RAW-failid saadaval lisaga" data-en="RAW files available as add-on">RAW-failid saadaval lisaga</strong>
+            <p data-et="Failid lisaks lõplikele JPEGidele, kui seda vajatakse." data-en="Unprocessed originals alongside finals if needed.">Failid lisaks lõplikele JPEGidele, kui seda vajatakse.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HINNAKIRI
+       ============================================================ -->
+  <section id="pricing" class="biz-pricing">
+    <div class="container">
+
+      <!-- Autoesindused -->
+      <div class="biz-pricing-block">
+        <div class="biz-pricing-header">
+          <h2 data-et="Autoesindused" data-en="Dealerships">Autoesindused</h2>
+          <p data-et="Inventarivõtted ja püsikliendi lahendused esindustele, kes vajavad ühtlast ja professionaalset visuaalset keelt."
+             data-en="Inventory photography and retainer solutions for dealerships that need consistent, professional imagery.">
+            Inventarivõtted ja püsikliendi lahendused esindustele, kes vajavad ühtlast ja professionaalset visuaalset keelt.
+          </p>
+        </div>
+
+        <div class="biz-cards">
+
+          <div class="biz-card">
+            <div class="biz-card-top">
+              <span class="biz-card-name" data-et="Baasvõte" data-en="Single Vehicle">Baasvõte</span>
+              <div class="biz-card-price">
+                <span class="biz-price-amount">€199</span>
+                <span class="biz-price-unit" data-et="auto kohta" data-en="per vehicle">auto kohta</span>
+              </div>
+            </div>
+            <ul class="biz-card-list">
+              <li data-et="1 sõiduk" data-en="1 vehicle">1 sõiduk</li>
+              <li data-et="10+ töödeldud fotot" data-en="10+ edited photos">10+ töödeldud fotot</li>
+              <li data-et="Stuudiovalgustus kohapeal" data-en="Studio lighting on location">Stuudiovalgustus kohapeal</li>
+              <li data-et="Äriline litsents" data-en="Commercial licence">Äriline litsents</li>
+              <li data-et="Tarnimine 5 tööpäeva jooksul" data-en="Delivery in 5 working days">Tarnimine 5 tööpäeva jooksul</li>
+            </ul>
+            <a href="#contact-biz" class="biz-card-btn"
+               data-et="Broneeri →" data-en="Book →">Broneeri →</a>
+          </div>
+
+          <div class="biz-card biz-card--featured">
+            <div class="biz-card-badge" data-et="Populaarne" data-en="Most popular">Populaarne</div>
+            <div class="biz-card-top">
+              <span class="biz-card-name" data-et="Päevavõte" data-en="Day Shoot">Päevavõte</span>
+              <div class="biz-card-price">
+                <span class="biz-price-amount">€349</span>
+                <span class="biz-price-unit" data-et="päev" data-en="per day">päev</span>
+              </div>
+            </div>
+            <ul class="biz-card-list">
+              <li data-et="Kuni 3 sõidukit" data-en="Up to 3 vehicles">Kuni 3 sõidukit</li>
+              <li data-et="30+ töödeldud fotot" data-en="30+ edited photos">30+ töödeldud fotot</li>
+              <li data-et="Stuudiovalgustus kohapeal" data-en="Studio lighting on location">Stuudiovalgustus kohapeal</li>
+              <li data-et="Äriline litsents" data-en="Commercial licence">Äriline litsents</li>
+              <li data-et="Video reelide võte võimalik" data-en="Video reels available">Video reelide võte võimalik</li>
+              <li data-et="Tarnimine 5 tööpäeva jooksul" data-en="Delivery in 5 working days">Tarnimine 5 tööpäeva jooksul</li>
+            </ul>
+            <a href="#contact-biz" class="biz-card-btn"
+               data-et="Broneeri →" data-en="Book →">Broneeri →</a>
+          </div>
+
+          <div class="biz-card">
+            <div class="biz-card-top">
+              <span class="biz-card-name" data-et="Püsiklient" data-en="Monthly Retainer">Püsiklient</span>
+              <div class="biz-card-price">
+                <span class="biz-price-amount">€1 299</span>
+                <span class="biz-price-unit" data-et="/kuus" data-en="/month">/kuus</span>
+              </div>
+            </div>
+            <ul class="biz-card-list">
+              <li data-et="Piiramatu arv sõidukeid kuus" data-en="Unlimited vehicles per month">Piiramatu arv sõidukeid kuus</li>
+              <li data-et="Prioriteetne broneerimine" data-en="Priority booking">Prioriteetne broneerimine</li>
+              <li data-et="Sotsiaalmeediale optimeeritud lõikud" data-en="Social media cut-downs">Sotsiaalmeediale optimeeritud lõikud</li>
+              <li data-et="Äriline litsents kõigile materjalidele" data-en="Commercial licence on all content">Äriline litsents kõigile materjalidele</li>
+              <li data-et="Kuumaksega leping" data-en="Monthly rolling contract">Kuumaksega leping</li>
+            </ul>
+            <a href="#contact-biz" class="biz-card-btn"
+               data-et="Päri lisainfot →" data-en="Enquire →">Päri lisainfot →</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Autobrändid -->
+      <div class="biz-pricing-block">
+        <div class="biz-pricing-header">
+          <h2 data-et="Autobrändid" data-en="Automotive Brands">Autobrändid</h2>
+          <p data-et="Kampaaniavõtted ja brändi visuaalid, mis peavad vastu konkurentsile — täis tootmine kohapeal Eestis ja välismaal."
+             data-en="Campaign shoots and brand visuals that stand up to the competition — full production on location in Estonia and beyond.">
+            Kampaaniavõtted ja brändi visuaalid, mis peavad vastu konkurentsile — täis tootmine kohapeal Eestis ja välismaal.
+          </p>
+        </div>
+
+        <div class="biz-cards">
+
+          <div class="biz-card">
+            <div class="biz-card-top">
+              <span class="biz-card-name" data-et="Poolpäev" data-en="Half Day">Poolpäev</span>
+              <div class="biz-card-price">
+                <span class="biz-price-amount">€799</span>
+                <span class="biz-price-unit" data-et="4 tundi" data-en="4 hours">4 tundi</span>
+              </div>
+            </div>
+            <ul class="biz-card-list">
+              <li data-et="Kuni 2 sõidukit" data-en="Up to 2 vehicles">Kuni 2 sõidukit</li>
+              <li data-et="25+ töödeldud fotot" data-en="25+ edited photos">25+ töödeldud fotot</li>
+              <li data-et="Asukoha scouting kaasas" data-en="Location scouting included">Asukoha scouting kaasas</li>
+              <li data-et="Äriline litsents" data-en="Commercial licence">Äriline litsents</li>
+              <li data-et="Tarnimine nädala jooksul" data-en="Delivery within one week">Tarnimine nädala jooksul</li>
+            </ul>
+            <a href="#contact-biz" class="biz-card-btn"
+               data-et="Broneeri →" data-en="Book →">Broneeri →</a>
+          </div>
+
+          <div class="biz-card biz-card--featured">
+            <div class="biz-card-badge" data-et="Populaarne" data-en="Most popular">Populaarne</div>
+            <div class="biz-card-top">
+              <span class="biz-card-name" data-et="Täispäev" data-en="Full Day">Täispäev</span>
+              <div class="biz-card-price">
+                <span class="biz-price-amount">€1 499</span>
+                <span class="biz-price-unit" data-et="8 tundi" data-en="8 hours">8 tundi</span>
+              </div>
+            </div>
+            <ul class="biz-card-list">
+              <li data-et="Mitu sõidukit" data-en="Multiple vehicles">Mitu sõidukit</li>
+              <li data-et="60+ töödeldud fotot" data-en="60+ edited photos">60+ töödeldud fotot</li>
+              <li data-et="Asukoha scouting kaasas" data-en="Location scouting included">Asukoha scouting kaasas</li>
+              <li data-et="Äriline litsents" data-en="Commercial licence">Äriline litsents</li>
+              <li data-et="Video behind-the-scenes" data-en="Behind-the-scenes video">Video behind-the-scenes</li>
+              <li data-et="Tarnimine nädala jooksul" data-en="Delivery within one week">Tarnimine nädala jooksul</li>
+            </ul>
+            <a href="#contact-biz" class="biz-card-btn"
+               data-et="Broneeri →" data-en="Book →">Broneeri →</a>
+          </div>
+
+          <div class="biz-card">
+            <div class="biz-card-top">
+              <span class="biz-card-name" data-et="Kampaania" data-en="Campaign">Kampaania</span>
+              <div class="biz-card-price">
+                <span class="biz-price-amount">€2 999+</span>
+                <span class="biz-price-unit" data-et="mitme päev" data-en="multi-day">mitme päev</span>
+              </div>
+            </div>
+            <ul class="biz-card-list">
+              <li data-et="Mitu võttepäeva" data-en="Multiple shoot days">Mitu võttepäeva</li>
+              <li data-et="Täielik kampaaniapakk — foto + video" data-en="Full campaign pack — stills &amp; video">Täielik kampaaniapakk — foto + video</li>
+              <li data-et="Asukoha valik ja ettevalmistus" data-en="Location selection &amp; prep">Asukoha valik ja ettevalmistus</li>
+              <li data-et="Äriline litsents kõigile materjalidele" data-en="Commercial licence on all content">Äriline litsents kõigile materjalidele</li>
+              <li data-et="Individuaalne hinnapakkumine" data-en="Custom quote">Individuaalne hinnapakkumine</li>
+            </ul>
+            <a href="#contact-biz" class="biz-card-btn"
+               data-et="Päri pakkumist →" data-en="Request quote →">Päri pakkumist →</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROTSESS
+       ============================================================ -->
+  <section class="biz-process">
+    <div class="container">
+      <h2 class="biz-section-label" data-et="Kuidas see käib" data-en="How it works">Kuidas see käib</h2>
+      <div class="biz-process-steps">
+
+        <div class="biz-step">
+          <span class="biz-step-num-bg">01</span>
+          <div class="biz-step-body">
+            <span class="biz-step-index">01</span>
+            <h3 data-et="Briif" data-en="Brief">Briif</h3>
+            <p data-et="Saada päring — kirjelda sõidukeid, ajakava ja ootusi. Saame hinnapakkumise 24 tunni jooksul."
+               data-en="Send an enquiry — describe the vehicles, timeline and expectations. You will have a quote within 24 hours.">
+              Saada päring — kirjelda sõidukeid, ajakava ja ootusi. Saame hinnapakkumise 24 tunni jooksul.
+            </p>
+          </div>
+        </div>
+
+        <div class="biz-step">
+          <span class="biz-step-num-bg">02</span>
+          <div class="biz-step-body">
+            <span class="biz-step-index">02</span>
+            <h3 data-et="Võte" data-en="Shoot">Võte</h3>
+            <p data-et="Tuleme kohale varustusega — stuudiovalgustus, tehnika ja kõik vajalik. Sina vaid hoolitse, et auto oleks puhas."
+               data-en="We arrive with full kit — studio lighting, cameras and everything needed. You just make sure the car is clean.">
+              Tuleme kohale varustusega — stuudiovalgustus, tehnika ja kõik vajalik. Sina vaid hoolitse, et auto oleks puhas.
+            </p>
+          </div>
+        </div>
+
+        <div class="biz-step">
+          <span class="biz-step-num-bg">03</span>
+          <div class="biz-step-body">
+            <span class="biz-step-index">03</span>
+            <h3 data-et="Töötlus" data-en="Retouching">Töötlus</h3>
+            <p data-et="Iga pilt läbib professionaalse töötluse — värvikorrektsus, kontrast, puhtus. Tulemus on valmis ärieesmärgiks kasutamiseks."
+               data-en="Every image goes through professional post-processing — colour correction, contrast, clean. The result is ready for commercial use.">
+              Iga pilt läbib professionaalse töötluse — värvikorrektsus, kontrast, puhtus. Tulemus on valmis ärieesmärgiks kasutamiseks.
+            </p>
+          </div>
+        </div>
+
+        <div class="biz-step">
+          <span class="biz-step-num-bg">04</span>
+          <div class="biz-step-body">
+            <span class="biz-step-index">04</span>
+            <h3 data-et="Tarnimine" data-en="Delivery">Tarnimine</h3>
+            <p data-et="Pildid kättesaadavad privaatse allalaadimislingiga nädala jooksul. Kohene kasutamine kõigis kanalites."
+               data-en="Images delivered via a private download link within one week. Ready for immediate use across all channels.">
+              Pildid kättesaadavad privaatse allalaadimislingiga nädala jooksul. Kohene kasutamine kõigis kanalites.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KLIENDID
+       [MEELDETULETUS] Küsi Janaril 3 kliendi soovitust / referentsi.
+       Asenda allpool olevad placeholder tekstid päris tsitaatidega.
+       ============================================================ -->
+  <section class="biz-references">
+    <div class="container">
+      <h2 class="biz-section-label"
+          data-et="Mida kliendid ütlevad" data-en="What clients say">Mida kliendid ütlevad</h2>
+      <div class="biz-ref-grid">
+
+        <div class="biz-ref-card">
+          <blockquote class="biz-ref-quote">
+            <!-- [ASENDA] Päris klienditsitaadiga -->
+            <p data-et="„Platsehoidja — asenda Janari tegeliku kliendi tsitaadiga. Kirjelda tulemust: milliseid numbreid nägite, kuidas see mõjutas müüki või brändi.""
+               data-en=""Placeholder — replace with a real client testimonial from Janar. Describe the outcome: what numbers you saw, how it affected sales or brand perception."">
+              „Platsehoidja — asenda Janari tegeliku kliendi tsitaadiga. Kirjelda tulemust: milliseid numbreid nägite, kuidas see mõjutas müüki või brändi."
+            </p>
+          </blockquote>
+          <div class="biz-ref-author">
+            <!-- [ASENDA] Kliendi nimi, ametinimetus, ettevõte -->
+            <span class="biz-ref-name">Kliendi Nimi</span>
+            <span class="biz-ref-role" data-et="Ametinimetus, Ettevõte" data-en="Title, Company">Ametinimetus, Ettevõte</span>
+          </div>
+        </div>
+
+        <div class="biz-ref-card">
+          <blockquote class="biz-ref-quote">
+            <p data-et="„Platsehoidja — asenda Janari tegeliku kliendi tsitaadiga. Kirjelda tulemust: milliseid numbreid nägite, kuidas see mõjutas müüki või brändi.""
+               data-en=""Placeholder — replace with a real client testimonial from Janar."">
+              „Platsehoidja — asenda Janari tegeliku kliendi tsitaadiga. Kirjelda tulemust: milliseid numbreid nägite, kuidas see mõjutas müüki või brändi."
+            </p>
+          </blockquote>
+          <div class="biz-ref-author">
+            <span class="biz-ref-name">Kliendi Nimi</span>
+            <span class="biz-ref-role" data-et="Ametinimetus, Ettevõte" data-en="Title, Company">Ametinimetus, Ettevõte</span>
+          </div>
+        </div>
+
+        <div class="biz-ref-card">
+          <blockquote class="biz-ref-quote">
+            <p data-et="„Platsehoidja — asenda Janari tegeliku kliendi tsitaadiga. Kirjelda tulemust: milliseid numbreid nägite, kuidas see mõjutas müüki või brändi.""
+               data-en=""Placeholder — replace with a real client testimonial from Janar."">
+              „Platsehoidja — asenda Janari tegeliku kliendi tsitaadiga. Kirjelda tulemust: milliseid numbreid nägite, kuidas see mõjutas müüki või brändi."
+            </p>
+          </blockquote>
+          <div class="biz-ref-author">
+            <span class="biz-ref-name">Kliendi Nimi</span>
+            <span class="biz-ref-role" data-et="Ametinimetus, Ettevõte" data-en="Title, Company">Ametinimetus, Ettevõte</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GARANTII
+       ============================================================ -->
+  <section class="biz-guarantee">
+    <div class="container biz-guarantee-inner">
+      <div class="biz-guarantee-badge" data-et="Null Riskiga Garantii" data-en="Zero-Risk Guarantee">
+        Null Riskiga Garantii
+      </div>
+      <h2 data-et="100% rahul — või teeme uuesti." data-en="100% satisfied — or we do it again.">
+        100% rahul — või teeme uuesti.
+      </h2>
+      <p data-et="Kui lõplikud pildid ei vasta ootustele, töötleme need tasuta ümber. Ikka ei ole rahul? Korraldame korduspildistamise ilma lisatasuta. Null vastutusest loobumisklausleid. Null tingimusi. Lihtsalt paremad pildid."
+         data-en="If the final images don't meet expectations, we re-edit at no charge. Still not satisfied? We arrange a reshoot at no additional cost. No disclaimers. No conditions. Just better images.">
+        Kui lõplikud pildid ei vasta ootustele, töötleme need tasuta ümber. Ikka ei ole rahul? Korraldame korduspildistamise ilma lisatasuta. Null vastutusest loobumisklausleid. Null tingimusi. Lihtsalt paremad pildid.
+      </p>
+      <div class="biz-guarantee-items">
+        <div class="biz-guarantee-item">
+          <span class="biz-gi-num">01</span>
+          <div>
+            <strong data-et="Tasuta ümbertöötlus" data-en="Free re-edit">Tasuta ümbertöötlus</strong>
+            <p data-et="Ei meeldi tulemus? Vaatame koos üle ja töötleme uuesti." data-en="Not happy with the result? We review together and re-edit.">Ei meeldi tulemus? Vaatame koos üle ja töötleme uuesti.</p>
+          </div>
+        </div>
+        <div class="biz-guarantee-item">
+          <span class="biz-gi-num">02</span>
+          <div>
+            <strong data-et="Tasuta korduspildistamine" data-en="Free reshoot">Tasuta korduspildistamine</strong>
+            <p data-et="Kui ümbertöötlus ei lahenda probleemi, tuleme uuesti võtma." data-en="If the re-edit doesn't fix it, we come back and reshoot.">Kui ümbertöötlus ei lahenda probleemi, tuleme uuesti võtma.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KONTAKTVORM
+       ============================================================ -->
+  <section id="contact-biz" class="biz-contact">
+    <div class="container biz-contact-grid">
+
+      <div class="biz-contact-info">
+        <h2 data-et="Alustame." data-en="Let's talk.">Alustame.</h2>
+        <p data-et="Saada päring — kirjelda projekti ja me võtame ühendust 24 tunni jooksul hinnapakkumisega."
+           data-en="Send an enquiry — describe the project and we will come back with a quote within 24 hours.">
+          Saada päring — kirjelda projekti ja me võtame ühendust 24 tunni jooksul hinnapakkumisega.
+        </p>
+        <ul class="biz-contact-details">
+          <li>
+            <span data-et="E-post" data-en="Email">E-post</span>
+            — <a href="mailto:hello@lindjanar.ee">hello@lindjanar.ee</a>
+          </li>
+          <li>
+            <span data-et="Telefon" data-en="Phone">Telefon</span>
+            — +372 000 0000
+          </li>
+          <li>
+            <span data-et="Asukoht" data-en="Based in">Asukoht</span>
+            — <span data-et="Eesti, sõidame üle Baltikumi" data-en="Estonia, travel across the Baltics">Eesti, sõidame üle Baltikumi</span>
+          </li>
+        </ul>
+      </div>
+
+      <form class="biz-form" action="mailto:hello@lindjanar.ee" method="post" enctype="text/plain">
+        <div class="biz-form-row">
+          <input type="text" name="first_name"
+            data-et-placeholder="Eesnimi" data-en-placeholder="First name"
+            placeholder="Eesnimi" required />
+          <input type="text" name="last_name"
+            data-et-placeholder="Perekonnanimi" data-en-placeholder="Last name"
+            placeholder="Perekonnanimi" required />
+        </div>
+        <input type="text" name="company"
+          data-et-placeholder="Ettevõte / Bränd" data-en-placeholder="Company / Brand"
+          placeholder="Ettevõte / Bränd" />
+        <input type="email" name="email"
+          data-et-placeholder="E-post" data-en-placeholder="Email"
+          placeholder="E-post" required />
+        <input type="tel" name="phone"
+          data-et-placeholder="Telefon" data-en-placeholder="Phone"
+          placeholder="Telefon" />
+        <select name="project_type">
+          <option value="" disabled selected
+                  data-et="Projekti tüüp" data-en="Project type">Projekti tüüp</option>
+          <option value="inventory"
+                  data-et="Autoesindus — inventarivõte" data-en="Dealership — inventory shoot">
+            Autoesindus — inventarivõte</option>
+          <option value="retainer"
+                  data-et="Autoesindus — püsiklient" data-en="Dealership — retainer">
+            Autoesindus — püsiklient</option>
+          <option value="brand_half"
+                  data-et="Autobränd — poolpäev" data-en="Brand — half day">
+            Autobränd — poolpäev</option>
+          <option value="brand_full"
+                  data-et="Autobränd — täispäev" data-en="Brand — full day">
+            Autobränd — täispäev</option>
+          <option value="campaign"
+                  data-et="Autobränd — kampaania" data-en="Brand — campaign">
+            Autobränd — kampaania</option>
+          <option value="other"
+                  data-et="Muu" data-en="Other">Muu</option>
+        </select>
+        <textarea name="message"
+          data-et-placeholder="Kirjelda projekti — sõidukid, ajakava, ootused" data-en-placeholder="Describe the project — vehicles, timeline, expectations"
+          placeholder="Kirjelda projekti — sõidukid, ajakava, ootused"></textarea>
+        <button type="submit"
+                data-et="Saada päring" data-en="Send enquiry">Saada päring</button>
+      </form>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <span>&copy; <span class="year"></span> Janar Lind. <span data-et="Kõik õigused kaitstud." data-en="All rights reserved.">Kõik õigused kaitstud.</span></span>
+    <span data-et="Eesti" data-en="Estonia">Eesti</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
