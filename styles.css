@@ -138,7 +138,7 @@ img, video { max-width: 100%; display: block; }
 .hero-overlay .container { width: 100%; position: relative; }
 
 .hero-overlay h1 {
-  font-size: clamp(2.8rem, 10vw, 8rem);
+  font-size: clamp(1.6rem, 9vw, 8rem);
   font-weight: 700;
   letter-spacing: 0.04em;
   margin: 0 0 24px;
@@ -558,11 +558,6 @@ section h2 {
   text-transform: uppercase;
 }
 
-.gallery-caption {
-  color: var(--fg-dim);
-  margin: 0 0 48px;
-  max-width: 680px;
-}
 
 .gallery-photos { display: flex; flex-direction: column; gap: 16px; }
 .gallery-photos img { width: 100%; height: auto; }
