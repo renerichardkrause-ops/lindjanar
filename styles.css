@@ -246,7 +246,8 @@ section h2 {
 .placeholder-image.r-3-2 { aspect-ratio: 3 / 2; }
 .placeholder-image.r-3-4 { aspect-ratio: 3 / 4; }
 .placeholder-video { aspect-ratio: 16 / 9; }
-.placeholder-video-21-9 { aspect-ratio: 21 / 9; border-radius: 20px; overflow: hidden; display: block; }
+.placeholder-video-21-9 { aspect-ratio: 21 / 9; display: block; width: 100%; }
+.video-clip { border-radius: 20px; overflow: hidden; display: block; }
 
 /* Split sections */
 .section-split {
@@ -729,9 +730,28 @@ section h2 {
   .photo-grid-wrap { padding: 0 20px; }
   .grid { grid-template-columns: 1fr; }
   .photo-grid { columns: 1; }
-  .nav { gap: 16px; }
-  .nav a { font-size: 0.75rem; }
-  .nav-row { height: 60px; }
+
+  /* Nav: logo + scrollable nav strip + EN button — all one row */
+  .nav-row { height: 60px; gap: 0; }
+  .logo { flex-shrink: 0; }
+  .lang-toggle { flex-shrink: 0; margin-left: 4px; }
+  .nav {
+    flex: 1;
+    min-width: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 20px;
+    padding: 0 10px;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a {
+    font-size: 0.75rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
   .contact-form { grid-template-columns: 1fr; }
   .compare-knob { width: 36px; height: 36px; font-size: 12px; }
 }
