@@ -995,8 +995,10 @@ main {
 }
 
 @media (max-width: 640px) {
+  /* "AUTOFOTOGRAAFIA, MIS MÜÜB." — first word is 16 chars, was clipping at 10vw */
   .biz-hero-content h1 {
-    font-size: clamp(2.2rem, 10vw, 3.5rem);
+    font-size: clamp(1.5rem, 8vw, 3.5rem);
+    overflow-wrap: break-word;
   }
 
   .biz-process-steps {
