@@ -127,3 +127,86 @@ document.querySelectorAll('[data-compare]').forEach(initCompareSlider);
     if (e.key === 'Escape' && lightbox.classList.contains('is-open')) close();
   });
 })();
+
+// ============================================================
+// Mobile burger / slide-in drawer
+// Reads <nav class="nav"> at runtime — no HTML changes needed on
+// any page (index, photography, business, contact, all galleries).
+// data-et / data-en attributes come with the cloned links so
+// applyLanguage() keeps the drawer text in sync automatically.
+// ============================================================
+(function () {
+  var navRow    = document.querySelector('.nav-row');
+  var sourceNav = document.querySelector('nav.nav');
+  if (!navRow || !sourceNav) return;
+
+  // ── Burger button (appended to nav-row) ────────────────────
+  var burger = document.createElement('button');
+  burger.className = 'burger-toggle';
+  burger.setAttribute('aria-label', 'Open navigation');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.innerHTML = '<span></span><span></span><span></span>';
+  navRow.appendChild(burger);
+
+  // ── Backdrop ───────────────────────────────────────────────
+  var backdrop = document.createElement('div');
+  backdrop.className = 'mobile-drawer-backdrop';
+  document.body.appendChild(backdrop);
+
+  // ── Drawer ─────────────────────────────────────────────────
+  var drawer = document.createElement('div');
+  drawer.className = 'mobile-drawer';
+  drawer.setAttribute('role', 'dialog');
+  drawer.setAttribute('aria-modal', 'true');
+  drawer.setAttribute('aria-label', 'Navigation');
+
+  var closeBtn = document.createElement('button');
+  closeBtn.className = 'mobile-drawer-close';
+  closeBtn.setAttribute('aria-label', 'Close navigation');
+  closeBtn.textContent = '✕';
+  drawer.appendChild(closeBtn);
+
+  var linkNav = document.createElement('nav');
+  sourceNav.querySelectorAll('a').forEach(function (a) {
+    linkNav.appendChild(a.cloneNode(true));
+  });
+  drawer.appendChild(linkNav);
+
+  // Clone header lang toggle — keeps onclick="toggleLanguage()" intact
+  var headerLang = navRow.querySelector('.lang-toggle');
+  if (headerLang) {
+    var drawerLang = headerLang.cloneNode(true);
+    drawerLang.classList.add('mobile-drawer-lang');
+    drawer.appendChild(drawerLang);
+  }
+
+  document.body.appendChild(drawer);
+
+  // ── Open / close ───────────────────────────────────────────
+  function openDrawer() {
+    drawer.classList.add('is-open');
+    backdrop.classList.add('is-open');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    backdrop.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  burger.addEventListener('click', openDrawer);
+  closeBtn.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+
+  // Close on link tap (handles same-page anchors like #videography)
+  linkNav.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', closeDrawer);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeDrawer();
+  });
+})();

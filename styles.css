@@ -848,3 +848,125 @@ section h2 {
   border-color: #fff;
   background: rgba(255, 255, 255, 0.08);
 }
+
+/* ============================================================
+   MOBILE BURGER / SLIDE-IN DRAWER
+   Built entirely via JS — no HTML edits needed on any page.
+   ============================================================ */
+.burger-toggle {
+  display: none; /* shown only on mobile */
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px 4px;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.burger-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--fg);
+  border-radius: 1px;
+}
+
+/* Backdrop — rendered but invisible until .is-open; display:none on desktop */
+.mobile-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 98;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  display: none;
+}
+
+.mobile-drawer-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Drawer panel — always off-screen (translateX 100%), slides in on .is-open */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 72%;
+  max-width: 300px;
+  background: var(--bg);
+  border-left: 1px solid var(--border);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 32px 48px;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow-y: auto;
+}
+
+.mobile-drawer.is-open {
+  transform: translateX(0);
+}
+
+.mobile-drawer-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--fg);
+  font-family: inherit;
+  font-size: 1rem;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease;
+}
+
+.mobile-drawer-close:hover { border-color: var(--fg); }
+
+.mobile-drawer nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-drawer nav a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg);
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.mobile-drawer nav a:first-child { border-top: 1px solid var(--border); }
+.mobile-drawer nav a:hover,
+.mobile-drawer nav a.active { color: var(--fg-dim); }
+
+/* Language toggle at the bottom of the drawer */
+.mobile-drawer-lang {
+  margin-top: auto;
+  padding-top: 32px;
+  align-self: flex-start;
+}
+
+@media (max-width: 600px) {
+  .burger-toggle { display: flex; }
+  .mobile-drawer-backdrop { display: block; }
+
+  /* Old scrollable nav strip + header lang toggle replaced by the drawer */
+  .nav { display: none !important; }
+  .lang-toggle:not(.mobile-drawer-lang) { display: none !important; }
+}
