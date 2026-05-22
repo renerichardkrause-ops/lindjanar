@@ -246,8 +246,24 @@ section h2 {
 .placeholder-image.r-3-2 { aspect-ratio: 3 / 2; }
 .placeholder-image.r-3-4 { aspect-ratio: 3 / 4; }
 .placeholder-video { aspect-ratio: 16 / 9; }
-.placeholder-video-21-9 { aspect-ratio: 21 / 9; display: block; width: 100%; }
-.video-clip { border-radius: 20px; overflow: hidden; display: block; }
+/* Video trio — clip-path on the <video> itself is the only reliable way to
+   round video corners in iOS Safari (overflow:hidden on a wrapper div is
+   ignored because video renders in a separate compositing layer). */
+.placeholder-video-21-9 {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;                /* non-Safari fallback */
+  clip-path: inset(0 round 20px);    /* clips the actual video pixels */
+}
+.video-clip {
+  height: clamp(160px, 28vw, 380px); /* tall enough to see on all screens */
+  border-radius: 20px;
+  overflow: hidden;
+  display: block;
+  -webkit-mask-image: -webkit-radial-gradient(white, black); /* belt */
+}
 
 /* Split sections */
 .section-split {
@@ -301,8 +317,9 @@ section h2 {
 .video-trio {
   margin-top: 56px;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 0 10px; /* small breathing room so outer corners show against section bg */
 }
 
 /* Retouching compare slider */
