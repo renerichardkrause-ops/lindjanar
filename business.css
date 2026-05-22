@@ -298,52 +298,113 @@ main {
 }
 
 /* ============================================================
-   WHAT'S INCLUDED
+   WHAT'S INCLUDED — numbered serif treatment
    ============================================================ */
-.biz-includes {
-  padding: 100px 0;
-  border-bottom: 1px solid var(--border);
-  background: var(--bg-alt);
+.inclusions {
+  --inc-font-sans:  "Inter", system-ui, -apple-system, sans-serif;
+  --inc-font-serif: "Cormorant Garamond", Georgia, serif;
+  --inc-bg:         #ece8df;
+  --inc-text:       #1f1b16;
+  --inc-mute:       #75695a;
+  --inc-accent:     #b85c20;
+
+  background: var(--inc-bg);
+  color: var(--inc-text);
+  font-family: var(--inc-font-sans);
+  padding: clamp(64px, 9vw, 120px) clamp(20px, 5vw, 64px);
 }
 
-.biz-includes-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px 64px;
+.inclusions__inner {
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
-.biz-include-item {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
+/* Kicker — small-caps section label, doubles as H2 for accessibility */
+.inclusions__kicker {
+  margin: 0 0 clamp(40px, 6vw, 72px) !important;
+  font-family: var(--inc-font-sans) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  color: var(--inc-mute) !important;
 }
 
-.biz-check {
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  border: 1px solid var(--biz-gold);
-  color: var(--biz-gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  margin-top: 2px;
-}
-
-.biz-include-item strong {
-  display: block;
-  font-size: 0.95rem;
-  font-weight: 500;
-  margin-bottom: 4px;
-  color: var(--fg);
-}
-
-.biz-include-item p {
+/* Two-column grid, collapses to one on narrow viewports */
+.inclusions__list {
+  list-style: none;
   margin: 0;
-  font-size: 0.85rem;
-  color: var(--fg-dim);
-  line-height: 1.5;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(40px, 6vw, 96px);
+  row-gap: clamp(36px, 4vw, 56px);
+}
+
+@media (max-width: 720px) {
+  .inclusions__list {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+}
+
+.inclusions__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: clamp(20px, 2vw, 28px);
+  align-items: start;
+}
+
+/* Serif numerals */
+.inclusions__num {
+  font-family: var(--inc-font-serif);
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--inc-accent);
+  font-feature-settings: "lnum" 1;
+  letter-spacing: -0.01em;
+  padding-top: 2px;
+  min-width: 44px;
+}
+
+.inclusions__body { min-width: 0; }
+
+.inclusions__title {
+  margin: 0 0 6px;
+  font-family: var(--inc-font-sans);
+  font-size: clamp(15px, 1.3vw, 17px);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+  color: var(--inc-text);
+  text-transform: none;
+}
+
+.inclusions__sub {
+  margin: 0;
+  font-size: clamp(13px, 1.05vw, 14px);
+  line-height: 1.55;
+  color: var(--inc-mute);
+}
+
+/* Scroll-reveal stagger — guarded by prefers-reduced-motion */
+@media (prefers-reduced-motion: no-preference) {
+  .inclusions__item {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+                transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .inclusions__item.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  .inclusions__item:nth-child(2) { transition-delay: 70ms; }
+  .inclusions__item:nth-child(3) { transition-delay: 140ms; }
+  .inclusions__item:nth-child(4) { transition-delay: 210ms; }
+  .inclusions__item:nth-child(5) { transition-delay: 280ms; }
+  .inclusions__item:nth-child(6) { transition-delay: 350ms; }
 }
 
 /* ============================================================
@@ -898,11 +959,6 @@ main {
   .biz-who-grid {
     grid-template-columns: 1fr;
     gap: 56px;
-  }
-
-  .biz-includes-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
   }
 
   .biz-samples-strip {

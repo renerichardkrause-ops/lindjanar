@@ -69,6 +69,28 @@ function initCompareSlider(el) {
 document.querySelectorAll('[data-compare]').forEach(initCompareSlider);
 
 // ============================================================
+// Inclusions scroll-reveal — fades items in as they enter viewport
+// ============================================================
+(function () {
+  if (typeof window === 'undefined') return;
+  var items = document.querySelectorAll('.inclusions__item');
+  if (!items.length) return;
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+  items.forEach(function (el) { io.observe(el); });
+})();
+
+// ============================================================
 // Lightbox — single-image gallery thumbnails (.gallery-thumb--lightbox)
 // ============================================================
 (function () {
