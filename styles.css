@@ -771,6 +771,7 @@ section h2 {
 
   .contact-form { grid-template-columns: 1fr; }
   .compare-knob { width: 36px; height: 36px; font-size: 12px; }
+  .video-trio { grid-template-columns: 1fr; }
 
   /* Photography-page hero: "AUTOFOTOGRAAFIA" (15 chars) overflows at 9vw.
      Scoped to .photo-hero so the homepage "LINDJANAR" h1 is unaffected. */
