@@ -704,6 +704,43 @@ section h2 {
 }
 
 .contact-form button:hover { opacity: 0.85; }
+.contact-form button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Formspree field-level errors */
+.fs-field-error {
+  display: block;
+  font-size: 0.75rem;
+  color: #e05c5c;
+  letter-spacing: 0.05em;
+  margin-top: -8px;   /* pull up slightly, gap already provided by grid */
+}
+
+/* Formspree form-level error */
+.contact-form-error {
+  color: #e05c5c;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+/* Formspree success message */
+.contact-form-success {
+  padding: 32px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.contact-form-success p {
+  color: var(--fg);
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+/* aria-invalid highlight on fields with errors */
+.contact-form input[aria-invalid="true"],
+.contact-form textarea[aria-invalid="true"] {
+  border-color: #e05c5c;
+}
 
 .contact-socials {
   display: flex;

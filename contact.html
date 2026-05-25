@@ -76,23 +76,45 @@
           </div>
         </div>
 
-        <form class="contact-form" action="mailto:hello@lindjanar.ee" method="post" enctype="text/plain">
+        <!-- Formspree: success / form-level error (shown by the JS library) -->
+        <div data-fs-success class="contact-form-success" style="display:none">
+          <p data-et="Sõnum saadetud! Võtan peagi ühendust."
+             data-en="Message sent! I'll be in touch soon.">
+            Sõnum saadetud! Võtan peagi ühendust.
+          </p>
+        </div>
+        <div data-fs-error class="contact-form-error"></div>
+
+        <form id="contact-form" class="contact-form">
           <input type="text" name="first_name"
+            data-fs-field
             data-et-placeholder="Eesnimi" data-en-placeholder="First name"
             placeholder="Eesnimi" required />
+          <span data-fs-error="first_name" class="fs-field-error"></span>
+
           <input type="text" name="last_name"
+            data-fs-field
             data-et-placeholder="Perekonnanimi" data-en-placeholder="Last name"
             placeholder="Perekonnanimi" required />
+          <span data-fs-error="last_name" class="fs-field-error"></span>
+
           <input type="tel" name="phone"
             data-et-placeholder="Telefoninumber" data-en-placeholder="Phone number"
             placeholder="Telefoninumber" />
+
           <input type="email" name="email"
+            data-fs-field
             data-et-placeholder="E-post" data-en-placeholder="Email"
             placeholder="E-post" required />
+          <span data-fs-error="email" class="fs-field-error"></span>
+
           <textarea class="full" name="message"
+            data-fs-field
             data-et-placeholder="Sõnum" data-en-placeholder="Message"
             placeholder="Sõnum" required></textarea>
-          <button type="submit" class="full"
+          <span data-fs-error="message" class="fs-field-error full"></span>
+
+          <button type="submit" class="full" data-fs-submit-btn
             data-et="Saada" data-en="Send">Saada</button>
         </form>
 
@@ -110,5 +132,10 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'mgoqoqja' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
