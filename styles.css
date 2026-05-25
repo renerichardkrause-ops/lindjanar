@@ -121,7 +121,8 @@ img, video { max-width: 100%; display: block; }
   inset: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end; /* text sits in the lower third */
+  padding-bottom: clamp(40px, 7vh, 80px);
   z-index: 3;
   pointer-events: none;
 }
@@ -130,7 +131,8 @@ img, video { max-width: 100%; display: block; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(12,12,13,0.35) 0%, transparent 40%, transparent 60%, rgba(12,12,13,0.45) 100%);
+  /* stronger gradient at the bottom to back the text, lighter at top so car shines */
+  background: linear-gradient(to bottom, rgba(12,12,13,0.15) 0%, transparent 35%, transparent 45%, rgba(12,12,13,0.65) 100%);
   pointer-events: none;
   z-index: -1;
 }
@@ -258,7 +260,7 @@ section h2 {
   clip-path: inset(0 round 20px);    /* clips the actual video pixels */
 }
 .video-clip {
-  height: clamp(160px, 28vw, 380px); /* tall enough to see on all screens */
+  aspect-ratio: 21 / 9; /* landscape ratio, width-driven now videos stack full-width */
   border-radius: 20px;
   overflow: hidden;
   display: block;
@@ -317,9 +319,9 @@ section h2 {
 .video-trio {
   margin-top: 56px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr; /* stacked vertically, each video full width landscape */
   gap: 10px;
-  padding: 0 10px; /* small breathing room so outer corners show against section bg */
+  padding: 0 10px;
 }
 
 /* Retouching compare slider */
@@ -808,7 +810,6 @@ section h2 {
 
   .contact-form { grid-template-columns: 1fr; }
   .compare-knob { width: 36px; height: 36px; font-size: 12px; }
-  .video-trio { grid-template-columns: 1fr; }
 
   /* Photography-page hero: "AUTOFOTOGRAAFIA" (15 chars) overflows at 9vw.
      Scoped to .photo-hero so the homepage "LINDJANAR" h1 is unaffected. */
