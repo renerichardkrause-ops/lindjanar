@@ -596,6 +596,79 @@ main {
   color: #0c0c0d;
 }
 
+/* ── Value metric strip ─────────────────────────────────────── */
+.biz-card-metric {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+
+.biz-card--featured .biz-card-metric {
+  border-top-color: rgba(201, 146, 79, 0.25);
+}
+
+.biz-metric-main {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 7px;
+}
+
+.biz-metric-num {
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-weight: 700;
+  color: var(--fg);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.biz-metric-unit {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+}
+
+.biz-metric-sub {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--fg-dim);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.biz-metric-sub--base {
+  font-size: 0.73rem;
+  letter-spacing: 0.04em;
+  color: rgba(163, 163, 168, 0.6);
+}
+
+.biz-metric-badge {
+  display: inline-block;
+  background: rgba(21, 128, 61, 0.1);
+  color: #15803d;
+  border: 1px solid rgba(21, 128, 61, 0.35);
+  padding: 2px 8px;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.biz-card--featured .biz-metric-badge {
+  background: rgba(21, 128, 61, 0.14);
+  border-color: rgba(21, 128, 61, 0.5);
+}
+
+
+@media (max-width: 680px) {
+  .biz-metric-num { font-size: 1.7rem; }
+}
+
 /* ============================================================
    PROCESS
    ============================================================ */
