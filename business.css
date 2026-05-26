@@ -947,6 +947,36 @@ main {
   border-color: var(--fg-dim);
 }
 
+.biz-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.biz-form input[aria-invalid="true"],
+.biz-form select[aria-invalid="true"],
+.biz-form textarea[aria-invalid="true"] {
+  border-color: #e05c5c;
+}
+
+.biz-form-success {
+  padding: 32px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.biz-form-success p {
+  color: var(--fg);
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.biz-form-error {
+  color: #e05c5c;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */

@@ -601,21 +601,40 @@
         </ul>
       </div>
 
-      <form class="biz-form" action="mailto:hello@lindjanar.ee" method="post" enctype="text/plain">
+      <!-- Formspree: success / form-level error -->
+      <div data-fs-success class="biz-form-success" style="display:none">
+        <p data-et="Päring saadetud! Võtan peagi ühendust."
+           data-en="Inquiry sent! I'll be in touch soon.">
+          Päring saadetud! Võtan peagi ühendust.
+        </p>
+      </div>
+      <div data-fs-error class="biz-form-error"></div>
+
+      <form id="biz-contact-form" class="biz-form">
         <div class="biz-form-row">
-          <input type="text" name="first_name"
-            data-et-placeholder="Eesnimi" data-en-placeholder="First name"
-            placeholder="Eesnimi" required />
-          <input type="text" name="last_name"
-            data-et-placeholder="Perekonnanimi" data-en-placeholder="Last name"
-            placeholder="Perekonnanimi" required />
+          <div>
+            <input type="text" name="first_name"
+              data-fs-field
+              data-et-placeholder="Eesnimi" data-en-placeholder="First name"
+              placeholder="Eesnimi" required />
+            <span data-fs-error="first_name" class="fs-field-error"></span>
+          </div>
+          <div>
+            <input type="text" name="last_name"
+              data-fs-field
+              data-et-placeholder="Perekonnanimi" data-en-placeholder="Last name"
+              placeholder="Perekonnanimi" required />
+            <span data-fs-error="last_name" class="fs-field-error"></span>
+          </div>
         </div>
         <input type="text" name="company"
           data-et-placeholder="Ettevõte / Bränd" data-en-placeholder="Company / Brand"
           placeholder="Ettevõte / Bränd" />
         <input type="email" name="email"
+          data-fs-field
           data-et-placeholder="E-post" data-en-placeholder="Email"
           placeholder="E-post" required />
+        <span data-fs-error="email" class="fs-field-error"></span>
         <input type="tel" name="phone"
           data-et-placeholder="Telefon" data-en-placeholder="Phone"
           placeholder="Telefon" />
@@ -641,9 +660,11 @@
                   data-et="Muu" data-en="Other">Muu</option>
         </select>
         <textarea name="message"
+          data-fs-field
           data-et-placeholder="Kirjelda projekti — sõidukid, ajakava, ootused" data-en-placeholder="Describe the project — vehicles, timeline, expectations"
           placeholder="Kirjelda projekti — sõidukid, ajakava, ootused"></textarea>
-        <button type="submit"
+        <span data-fs-error="message" class="fs-field-error"></span>
+        <button type="submit" data-fs-submit-btn
                 data-et="Saada päring" data-en="Send inquiry">Saada päring</button>
       </form>
 
@@ -660,5 +681,10 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#biz-contact-form', formId: 'mgoqoqja' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
