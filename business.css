@@ -1032,16 +1032,26 @@ main {
 }
 
 .biz-form-success {
-  padding: 32px;
-  border: 1px solid var(--border);
+  margin-top: 16px;
+  padding: 14px 20px;
+  background: rgba(21, 128, 61, 0.08);
+  border: 1px solid rgba(21, 128, 61, 0.3);
   text-align: center;
+  animation: biz-form-success-fade 0.35s ease-out;
 }
 
 .biz-form-success p {
-  color: var(--fg);
+  color: #15803d;
   margin: 0;
-  font-size: 1rem;
-  letter-spacing: 0.05em;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.45;
+}
+
+@keyframes biz-form-success-fade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .biz-form-error {

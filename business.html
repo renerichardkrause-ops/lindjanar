@@ -640,13 +640,9 @@
         </ul>
       </div>
 
-      <!-- Formspree: success / form-level error -->
-      <div data-fs-success class="biz-form-success" style="display:none">
-        <p data-et="Päring saadetud! Võtan peagi ühendust."
-           data-en="Inquiry sent! I'll be in touch soon.">
-          Päring saadetud! Võtan peagi ühendust.
-        </p>
-      </div>
+      <div class="biz-form-wrap">
+
+      <!-- Form-level error (shown ABOVE the form when validation fails) -->
       <div data-fs-error class="biz-form-error"></div>
 
       <form id="biz-contact-form" class="biz-form">
@@ -707,6 +703,16 @@
                 data-et="Saada päring" data-en="Send inquiry">Saada päring</button>
       </form>
 
+      <!-- Success message — appears below the button after submit, auto-hides after 7s -->
+      <div data-fs-success class="biz-form-success" style="display:none">
+        <p data-et="Päring edukalt saadetud. Aitäh! Võtame ühendust 24h jooksul."
+           data-en="Inquiry successfully sent. Thank you! We'll get back to you in 24h the latest.">
+          Päring edukalt saadetud. Aitäh! Võtame ühendust 24h jooksul.
+        </p>
+      </div>
+
+      </div><!-- /.biz-form-wrap -->
+
     </div>
   </section>
 
@@ -723,6 +729,27 @@
 <script>
   window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
   formspree('initForm', { formElement: '#biz-contact-form', formId: 'mgoqoqja' });
+
+  // Auto-hide the success message 7 seconds after Formspree reveals it.
+  // We watch the inline style attribute Formspree toggles, then schedule the
+  // hide once per show (the timer is cleared between submissions).
+  (function () {
+    var success = document.querySelector('[data-fs-success]');
+    var form = document.getElementById('biz-contact-form');
+    if (!success || !form) return;
+    var timer = null;
+    new MutationObserver(function () {
+      var visible = window.getComputedStyle(success).display !== 'none';
+      if (visible && !timer) {
+        timer = setTimeout(function () {
+          success.style.display = 'none';
+          form.style.display = '';   // restore form if Formspree hid it
+          form.reset();
+          timer = null;
+        }, 7000);
+      }
+    }).observe(success, { attributes: true, attributeFilter: ['style'] });
+  })();
 </script>
 <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
