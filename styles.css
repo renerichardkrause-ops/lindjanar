@@ -317,11 +317,12 @@ section h2 {
 .videography-content p:last-child { margin-bottom: 0; }
 
 .video-trio {
-  margin-top: 56px;
+  margin: 56px auto 0;
+  max-width: var(--max);
   display: grid;
   grid-template-columns: 1fr; /* stacked vertically, each video full width landscape */
-  gap: 10px;
-  padding: 0 10px;
+  gap: 14px;
+  padding: 0 32px; /* matches .container side padding */
 }
 
 /* Retouching compare slider */
@@ -382,17 +383,10 @@ section h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: #fff;
-  color: #111;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: -2px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.5);
   pointer-events: none;
 }
@@ -809,7 +803,7 @@ section h2 {
   }
 
   .contact-form { grid-template-columns: 1fr; }
-  .compare-knob { width: 36px; height: 36px; font-size: 12px; }
+  .compare-knob { width: 32px; height: 32px; }
 
   /* Photography-page hero: "AUTOFOTOGRAAFIA" (15 chars) overflows at 9vw.
      Scoped to .photo-hero so the homepage "LINDJANAR" h1 is unaffected. */
