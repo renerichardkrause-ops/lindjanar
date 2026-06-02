@@ -470,6 +470,16 @@ section h2 {
   object-fit: cover;
 }
 
+/* Photography hero h1 "AUTOFOTOGRAAFIA" (15 uppercase chars) overflows the
+   container at the base 9vw once the viewport passes the container max-width.
+   Scope a calmer clamp + word-break to .photo-hero so it stays in bounds at
+   all desktop/wide widths. The homepage "LINDJANAR" h1 is unaffected. */
+.photo-hero .hero-overlay h1 {
+  font-size: clamp(1.6rem, 6.5vw, 6rem);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
 .photo-intro {
   padding: 80px 0 40px;
 }
