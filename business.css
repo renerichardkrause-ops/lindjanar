@@ -310,7 +310,8 @@ main {
 
   background: var(--inc-bg);
   color: var(--inc-text);
-  font-family: var(--inc-font-sans);
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, sans-serif;
+  font-weight: 200;
   padding: clamp(64px, 9vw, 120px) clamp(20px, 5vw, 64px);
 }
 
