@@ -160,7 +160,7 @@ img, video { max-width: 100%; display: block; }
   font-size: clamp(1rem, 1.4vw, 1.2rem);
   color: #f2f2f2;
   max-width: 680px;
-  margin: 0 0 0 -4px; /* optical alignment with h1 — "L" has no left side bearing at large size */
+  margin: 0; /* flush-left with h1 */
   line-height: 1.55;
   text-shadow: 0 2px 12px rgba(0,0,0,0.75);
 }
