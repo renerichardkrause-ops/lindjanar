@@ -219,3 +219,108 @@ document.querySelectorAll('[data-compare]').forEach(initCompareSlider);
     if (e.key === 'Escape') closeDrawer();
   });
 })();
+
+// ============================================================
+// Cookie consent — Google Consent Mode v2
+// Analytics/ads storage starts 'denied' (set in the gtag snippet
+// in each page's <head>). We only flip it to 'granted' after the
+// visitor explicitly accepts, and we remember the choice.
+// ============================================================
+(function () {
+  if (typeof window === 'undefined') return;
+  var KEY = 'cookie-consent';
+
+  function updateConsent(granted) {
+    if (typeof gtag !== 'function') return;
+    var state = granted ? 'granted' : 'denied';
+    gtag('consent', 'update', {
+      ad_storage: state,
+      ad_user_data: state,
+      ad_personalization: state,
+      analytics_storage: state
+    });
+  }
+
+  var stored = localStorage.getItem(KEY);
+  // Returning visitor who already decided → apply silently, no banner.
+  if (stored === 'granted') { updateConsent(true); return; }
+  if (stored === 'denied')  { updateConsent(false); return; }
+
+  // First visit → build the banner.
+  var banner = document.createElement('div');
+  banner.className = 'cookie-consent';
+  banner.setAttribute('role', 'dialog');
+  banner.setAttribute('aria-live', 'polite');
+  banner.setAttribute('aria-label', 'Cookie consent');
+
+  var p = document.createElement('p');
+  p.setAttribute('data-et', 'Kasutame küpsiseid saidi liikluse analüüsimiseks (Google Analytics). Kas oled nõus?');
+  p.setAttribute('data-en', 'We use cookies to analyse site traffic (Google Analytics). Is that okay?');
+  banner.appendChild(p);
+
+  var actions = document.createElement('div');
+  actions.className = 'cookie-consent-actions';
+
+  var accept = document.createElement('button');
+  accept.type = 'button';
+  accept.className = 'cookie-btn cookie-btn--accept';
+  accept.setAttribute('data-et', 'Nõustun');
+  accept.setAttribute('data-en', 'Accept');
+
+  var decline = document.createElement('button');
+  decline.type = 'button';
+  decline.className = 'cookie-btn cookie-btn--decline';
+  decline.setAttribute('data-et', 'Keeldun');
+  decline.setAttribute('data-en', 'Decline');
+
+  actions.appendChild(accept);
+  actions.appendChild(decline);
+  banner.appendChild(actions);
+  document.body.appendChild(banner);
+
+  // Localise the freshly-added nodes to the current language.
+  applyLanguage(localStorage.getItem('lang') || 'et');
+
+  requestAnimationFrame(function () { banner.classList.add('is-visible'); });
+
+  function dismiss(granted) {
+    localStorage.setItem(KEY, granted ? 'granted' : 'denied');
+    updateConsent(granted);
+    banner.classList.remove('is-visible');
+    setTimeout(function () { if (banner.parentNode) banner.remove(); }, 400);
+  }
+
+  accept.addEventListener('click', function () { dismiss(true); });
+  decline.addEventListener('click', function () { dismiss(false); });
+})();
+
+// ============================================================
+// Contact form → GA4 lead event (fires on Formspree success)
+// The Formspree library reveals [data-fs-success] on a sent message;
+// we watch for that and report a 'generate_lead' event once.
+// (Google Ads conversion line will be added here once the AW- ID
+//  and conversion label are available.)
+// ============================================================
+(function () {
+  var success = document.querySelector('[data-fs-success]');
+  if (!success) return;
+  var fired = false;
+
+  function isVisible(el) {
+    return el.offsetParent !== null && getComputedStyle(el).display !== 'none';
+  }
+
+  function maybeFire() {
+    if (fired || !isVisible(success)) return;
+    fired = true;
+    if (typeof gtag === 'function') {
+      gtag('event', 'generate_lead', {
+        event_category: 'contact',
+        event_label: 'contact_form'
+      });
+    }
+  }
+
+  var mo = new MutationObserver(maybeFire);
+  mo.observe(success, { attributes: true, attributeFilter: ['style', 'class', 'hidden'] });
+})();
