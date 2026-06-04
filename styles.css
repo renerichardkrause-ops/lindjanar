@@ -97,6 +97,25 @@ img, video { max-width: 100%; display: block; }
   color: var(--fg);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-cta {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--fg);
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  white-space: nowrap;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-cta:hover { border-color: var(--fg); }
+
 /* Hero photo (landing) */
 .hero-image {
   position: relative;
@@ -1004,6 +1023,14 @@ section h2 {
 .mobile-drawer nav a:hover,
 .mobile-drawer nav a.active { color: var(--fg-dim); }
 
+/* Real-estate CTA inside the drawer */
+.mobile-drawer-cta {
+  align-self: flex-start;
+  margin-top: 28px;
+  font-size: 0.95rem;
+  padding: 10px 18px;
+}
+
 /* Language toggle at the bottom of the drawer */
 .mobile-drawer-lang {
   margin-top: auto;
@@ -1018,4 +1045,5 @@ section h2 {
   /* Old scrollable nav strip + header lang toggle replaced by the drawer */
   .nav { display: none !important; }
   .lang-toggle:not(.mobile-drawer-lang) { display: none !important; }
+  .nav-cta:not(.mobile-drawer-cta) { display: none !important; }
 }

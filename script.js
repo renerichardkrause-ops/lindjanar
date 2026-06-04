@@ -172,6 +172,15 @@ document.querySelectorAll('[data-compare]').forEach(initCompareSlider);
   });
   drawer.appendChild(linkNav);
 
+  // Clone the standalone real-estate CTA (lives outside nav.nav, in .header-actions)
+  var headerCta = navRow.querySelector('.nav-cta');
+  if (headerCta) {
+    var drawerCta = headerCta.cloneNode(true);
+    drawerCta.classList.add('mobile-drawer-cta');
+    drawerCta.addEventListener('click', closeDrawer);
+    drawer.appendChild(drawerCta);
+  }
+
   // Clone header lang toggle — keeps onclick="toggleLanguage()" intact
   var headerLang = navRow.querySelector('.lang-toggle');
   if (headerLang) {
