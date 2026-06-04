@@ -289,7 +289,7 @@ section h2 {
 .split.reverse .split-text { order: 2; }
 .split.reverse .split-media { order: 1; }
 
-.split-text p { color: var(--fg-dim); margin: 0 0 16px; max-width: 540px; }
+.split-text p { color: #e6e6e6; margin: 0 0 16px; max-width: 540px; }
 .split-text p:last-child { margin-bottom: 0; }
 
 /* Videography (with bg video) */
@@ -337,7 +337,7 @@ section h2 {
   border-bottom: 1px solid var(--border);
 }
 
-.retouching p { color: var(--fg-dim); max-width: 680px; margin: 0 0 16px; }
+.retouching p { color: #e6e6e6; max-width: 680px; margin: 0 0 16px; }
 .retouching .retouching-body { margin-bottom: 48px; }
 
 .compare-slider {
@@ -417,10 +417,11 @@ section h2 {
 
 /* Personal */
 .personal { padding: 100px 0; border-bottom: 1px solid var(--border); }
+.personal p { color: #e6e6e6; }
 
 /* Contact */
 .contact { padding: 120px 0; text-align: center; }
-.contact p { color: var(--fg-dim); margin: 0 0 32px; }
+.contact p { color: #e6e6e6; margin: 0 0 32px; }
 
 .contact-list {
   list-style: none;
