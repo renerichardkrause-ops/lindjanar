@@ -311,6 +311,53 @@ section h2 {
 .split-text p { color: #e6e6e6; margin: 0 0 16px; max-width: 540px; }
 .split-text p:last-child { margin-bottom: 0; }
 
+/* Private-client price block (Autofotograafia section) */
+.split-price {
+  margin-top: 28px;
+  padding: 22px 24px;
+  border: 1px solid var(--border);
+  background: var(--bg-alt);
+  max-width: 540px;
+}
+.split-price .split-price-label {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+}
+.split-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.split-price-old {
+  color: var(--fg-dim);
+  text-decoration: line-through;
+  font-size: 17px;
+}
+.split-price-new {
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--fg);
+}
+.split-price-badge {
+  font-size: 12px;
+  padding: 3px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--fg);
+  background: var(--bg);
+}
+.split-price .split-price-note {
+  font-size: 14px;
+  margin: 12px 0 14px;
+}
+.split-price-cta { font-size: 15px; }
+
 /* Videography (with bg video) */
 .videography {
   position: relative;
