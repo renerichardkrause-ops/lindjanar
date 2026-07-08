@@ -356,6 +356,41 @@ section h2 {
   font-size: 14px;
   margin: 12px 0 14px;
 }
+.split-price .split-price-examples-label {
+  margin: 0 0 8px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+}
+.split-price-examples {
+  display: flex;
+  gap: 10px;
+  margin: 0 0 16px;
+}
+.split-price-example {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  max-width: 120px;
+}
+.split-price-example img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  transition: opacity 0.2s ease;
+}
+.split-price-example:hover img { opacity: 0.75; }
+.split-price-example span {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  color: var(--fg-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .split-price-cta { font-size: 15px; }
 
 /* Videography (with bg video) */
