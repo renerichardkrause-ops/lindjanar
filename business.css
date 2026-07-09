@@ -274,7 +274,7 @@ main {
 }
 
 .biz-who-list li::before {
-  content: "—";
+  content: "–";
   position: absolute;
   left: 0;
   color: var(--biz-gold);
