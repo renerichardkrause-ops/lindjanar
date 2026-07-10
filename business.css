@@ -436,6 +436,47 @@ main {
 }
 
 /* ============================================================
+   FILMS – two sample films side by side
+   ============================================================ */
+.biz-films {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.biz-films-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.biz-film {
+  margin: 0;
+}
+
+.biz-film video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--border);
+}
+
+.biz-film figcaption {
+  margin-top: 10px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+}
+
+@media (max-width: 680px) {
+  .biz-films-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ============================================================
    PRICING
    ============================================================ */
 .biz-pricing {
