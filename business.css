@@ -582,6 +582,13 @@ main {
   letter-spacing: 0.05em;
 }
 
+.biz-price-quote {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+}
+
 .biz-card-list {
   list-style: none;
   padding: 0;
