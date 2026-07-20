@@ -453,6 +453,10 @@ main {
   margin: 0;
 }
 
+.biz-film-frame {
+  position: relative;
+}
+
 .biz-film video {
   width: 100%;
   aspect-ratio: 16 / 9;

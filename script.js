@@ -324,3 +324,128 @@ document.querySelectorAll('[data-compare]').forEach(initCompareSlider);
   var mo = new MutationObserver(maybeFire);
   mo.observe(success, { attributes: true, attributeFilter: ['style', 'class', 'hidden'] });
 })();
+
+// ============================================================
+// Showcase videos (.video-clip / .biz-film) – custom controls:
+//  • sound toggle (only one video unmuted at a time)
+//  • one-click fullscreen that also enables sound
+//  • clicking a video writes its #anchor into the address bar,
+//    so the URL in the browser is instantly shareable
+// Background/ambience videos are intentionally left alone.
+// ============================================================
+(function () {
+  var containers = document.querySelectorAll('.video-clip, .biz-film');
+  if (!containers.length) return;
+
+  var ICON_MUTED =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" stroke="none"></polygon>' +
+    '<line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>';
+  var ICON_SOUND =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" stroke="none"></polygon>' +
+    '<path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>';
+  var ICON_FS =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<path d="M8 3H5a2 2 0 0 0-2 2v3"></path><path d="M21 8V5a2 2 0 0 0-2-2h-3"></path>' +
+    '<path d="M3 16v3a2 2 0 0 0 2 2h3"></path><path d="M16 21h3a2 2 0 0 0 2-2v-3"></path></svg>';
+
+  var all = [];
+
+  containers.forEach(function (container) {
+    var video = container.querySelector('video');
+    if (!video) return;
+
+    var frame = container.querySelector('.biz-film-frame') || container;
+
+    var soundBtn = document.createElement('button');
+    soundBtn.type = 'button';
+    soundBtn.className = 'video-ctrl video-ctrl-sound';
+    soundBtn.setAttribute('aria-label', 'Heli sisse või välja / Toggle sound');
+    soundBtn.innerHTML = ICON_MUTED;
+
+    var fsBtn = document.createElement('button');
+    fsBtn.type = 'button';
+    fsBtn.className = 'video-ctrl video-ctrl-fs';
+    fsBtn.setAttribute('aria-label', 'Täisekraan heliga / Fullscreen with sound');
+    fsBtn.innerHTML = ICON_FS;
+
+    var bar = document.createElement('div');
+    bar.className = 'video-ctrl-bar';
+    bar.appendChild(soundBtn);
+    bar.appendChild(fsBtn);
+    frame.appendChild(bar);
+
+    function sync() {
+      soundBtn.innerHTML = video.muted ? ICON_MUTED : ICON_SOUND;
+      soundBtn.classList.toggle('is-on', !video.muted);
+    }
+
+    all.push({ video: video, sync: sync });
+
+    function setHash() {
+      if (container.id && history.replaceState) {
+        history.replaceState(null, '', '#' + container.id);
+      }
+    }
+
+    function muteOthers() {
+      all.forEach(function (item) {
+        if (item.video !== video) {
+          item.video.muted = true;
+          item.sync();
+        }
+      });
+    }
+
+    function toggleSound() {
+      video.muted = !video.muted;
+      if (!video.muted) {
+        muteOthers();
+        video.play();
+      }
+      sync();
+      setHash();
+    }
+
+    soundBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      toggleSound();
+    });
+
+    fsBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      video.muted = false;
+      muteOthers();
+      video.play();
+      sync();
+      setHash();
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen(); /* iPhone Safari */
+      } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+      }
+    });
+
+    video.style.cursor = 'pointer';
+    video.addEventListener('click', function () {
+      var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+      if (fsEl === video) return; /* fullscreen has native controls; don't fight them */
+      toggleSound();
+    });
+
+    function onFsChange() {
+      var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+      /* native scrub/pause controls only while fullscreen */
+      video.controls = fsEl === video;
+      if (!fsEl && video.paused) video.play(); /* resume the loop after exit */
+    }
+    document.addEventListener('fullscreenchange', onFsChange);
+    document.addEventListener('webkitfullscreenchange', onFsChange);
+    video.addEventListener('webkitendfullscreen', function () {
+      if (video.paused) video.play();
+    });
+  });
+})();

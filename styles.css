@@ -289,7 +289,49 @@ section h2 {
   border-radius: 20px;
   overflow: hidden;
   display: block;
+  position: relative;
   -webkit-mask-image: -webkit-radial-gradient(white, black); /* belt */
+}
+
+/* Showcase video controls – sound toggle + one-click fullscreen.
+   Buttons are injected by script.js into .video-clip / .biz-film-frame. */
+.video-ctrl-bar {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+.video-ctrl {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.video-ctrl svg { width: 18px; height: 18px; display: block; }
+.video-ctrl:hover {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+.video-ctrl-sound.is-on {
+  background: rgba(255, 255, 255, 0.92);
+  color: #000;
+  border-color: #fff;
+}
+@media (max-width: 680px) {
+  .video-ctrl { width: 36px; height: 36px; }
+  .video-ctrl-bar { right: 10px; bottom: 10px; }
 }
 
 /* Split sections */
